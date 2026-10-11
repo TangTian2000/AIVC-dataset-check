@@ -1,2 +1,6 @@
 __pycache__/
 *.py[cod]
+
+# Downloaded reading cache; publish source URLs and notes, not full papers.
+papers/*.pdf
+papers/*.txt

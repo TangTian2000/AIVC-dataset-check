@@ -8,7 +8,7 @@
 
 |候选|研究适用性|已获证据|采用门槛|
 |---|---|---|---|
-|sciPlex3|可固定背景/剂量/时间、比较重复及板层级，并研究生物效应保真|188药、两rep、52板、每板2 vehicle设计样本；严格条件跨两组|完整cell-to-hash映射与QC细胞数；证明rep标签代表独立培养/处理；不要把不同时间当batch|
+|sciPlex3|可固定背景/剂量/时间、比较重复及板层级，并研究生物效应保真|188药、两rep、52板、每板2 vehicle设计样本；严格条件跨两组|完整cell-to-hash映射与QC细胞数；将rep标签与原文生物学重复及下游建库/run对应；不要把不同时间当batch|
 |MIX-seq|同药跨实验有真实作者对照映射，可检验有限条件的外部实验泛化|Trametinib24h在expt1/expt3，两个实验均有DMSO设计|共同细胞系、同剂量、培养/pool/库映射；实验差异若含生物背景，另设背景泛化任务|
 |OP3 PBMC|官方schema有plate、well、donor、dose、time，可同时检验技术与生物因素|144 compounds/24h/3 donors；DMSO与positive controls分开|完整obs；供体内跨plate共同药物与DMSO；plate/library不能被donor完全代替|
 
@@ -28,7 +28,7 @@ Norman2019适合作遗传组合预测参照；GSE206741 CPA组合药物、sci-Pl
 
 ## 信息不足
 
-Replogle2022 K562 GWPS/essential、RPE1仍保留为重点遗传候选，但gem_group重命名不能解决独立批次定义。Tahoe有独立Parquet和重复sample定义、被State实际采用，值得获取小metadata后升级；当前版本/访问与层级关系未解决。Parse刺激覆盖丰富、State训练证据明确，但正式card/技术重复未核实。Jiang24的遗传×五刺激有benchmark使用证据，原论文、counts及技术层级仍缺。Adamson、Dixit、Gasperini、Xie、sciPlex4需要验证面板、MOI、时间、背景与batch重叠；不能因未找到记录认定没有批次效应。
+Replogle2022 K562 GWPS/essential、RPE1仍保留为重点遗传候选，但gem_group重命名不能解决独立批次定义。Tahoe有独立Parquet和重复sample定义、被State实际采用，值得获取小metadata后升级；当前版本/访问与层级关系未解决。Parse刺激覆盖丰富、State训练证据明确，但正式card/技术重复未核实。Jiang24的遗传×五刺激有benchmark使用证据，原论文、counts及技术层级仍缺。Gasperini原文已找到32 lane在RT后分两批的建库设计，优先取得lane→批次及细胞映射；仍属信息不足是因为实际共同条件/对照数未核实。Adamson、Dixit、Xie、sciPlex4需要验证面板、MOI、时间、背景与batch重叠；不能因未找到记录认定没有批次效应。
 
 ## 采用前的研究决策
 

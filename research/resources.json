@@ -789,5 +789,415 @@
     "source_commit": "698f8ff5ed19530bff171e4205be9b42a46a769d",
     "source_path": "Results/Genetic_perturbation/genetic_combo_performance_top100.csv",
     "sha256": "36db8b048e3a2811968cae4e8175c2e1a768225bb6767e0a1d1f543e21210e57"
+  },
+  {
+    "id": "year_pb_norman19_cpa",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/norman19/cpa_best_params_norman19.yaml",
+    "path": "sources/year_pb_norman19_cpa.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/norman19/cpa_best_params_norman19.yaml",
+    "sha256": "831231512d179efa704321606fa013b69f871438b493b9b7d92fad843f62c490"
+  },
+  {
+    "id": "year_pb_norman19_linear",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/norman19/linear_best_params_norman19.yaml",
+    "path": "sources/year_pb_norman19_linear.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/norman19/linear_best_params_norman19.yaml",
+    "sha256": "4a29cc54ae910fb05db2ebd5d663f6a64dc95e3ab6249c66fcadee5d8e2504f3"
+  },
+  {
+    "id": "year_pb_norman19_latent",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/norman19/latent_best_params_norman19.yaml",
+    "path": "sources/year_pb_norman19_latent.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/norman19/latent_best_params_norman19.yaml",
+    "sha256": "d282060062f8425ac9f8601fddb793a8b0154860572274ba3c458977ef80d25f"
+  },
+  {
+    "id": "year_pb_norman19_biolord",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/norman19/biolord_best_params_norman19.yaml",
+    "path": "sources/year_pb_norman19_biolord.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/norman19/biolord_best_params_norman19.yaml",
+    "sha256": "a016a5b1b2cbed1e970fd8aff597399fdb957105714bb52241542cbda4a1d0c9"
+  },
+  {
+    "id": "year_pb_sciplex3_cpa",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/sciplex3/cpa_best_params_sciplex3.yaml",
+    "path": "sources/year_pb_sciplex3_cpa.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/sciplex3/cpa_best_params_sciplex3.yaml",
+    "sha256": "50d4c39bd927c6a0cb5c2000fcd6b2dd2670de3a16de8cd7d6efd76ac40fa08b"
+  },
+  {
+    "id": "year_pb_sciplex3_linear",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/sciplex3/linear_best_params_sciplex3.yaml",
+    "path": "sources/year_pb_sciplex3_linear.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/sciplex3/linear_best_params_sciplex3.yaml",
+    "sha256": "1e3967c06294e7cdd38ea262ef510475934bf11e117bb8555efc2abd7e1378f4"
+  },
+  {
+    "id": "year_pb_sciplex3_latent",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/sciplex3/latent_best_params_sciplex3.yaml",
+    "path": "sources/year_pb_sciplex3_latent.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/sciplex3/latent_best_params_sciplex3.yaml",
+    "sha256": "79467577cb91710c67aacceb4c87ef65c43b398a79f4f833b60706db319796fa"
+  },
+  {
+    "id": "year_pb_sciplex3_biolord",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/sciplex3/biolord_best_params_sciplex3.yaml",
+    "path": "sources/year_pb_sciplex3_biolord.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/sciplex3/biolord_best_params_sciplex3.yaml",
+    "sha256": "57aa6c028e2754690749ec2158c67cf6b6bdcb80cb74aa2cf648d83d63409a16"
+  },
+  {
+    "id": "year_pb_op3_cpa",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/op3/cpa_best_params_op3.yaml",
+    "path": "sources/year_pb_op3_cpa.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/op3/cpa_best_params_op3.yaml",
+    "sha256": "307b730eacbb8c13fe1538c9636ce715427aaf9aef5aed624bcc8642a3ed0c46"
+  },
+  {
+    "id": "year_pb_op3_linear",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/op3/linear_best_params_op3.yaml",
+    "path": "sources/year_pb_op3_linear.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/op3/linear_best_params_op3.yaml",
+    "sha256": "e947551b137418e2d1d11056c37e683038c6ede421fb7cfc50df23b6d610e9ce"
+  },
+  {
+    "id": "year_pb_op3_latent",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/op3/latent_best_params_op3.yaml",
+    "path": "sources/year_pb_op3_latent.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/op3/latent_best_params_op3.yaml",
+    "sha256": "004451f338e7ef9b7febefb3abc7469252ec8505bac0baf4605c609ec31071dd"
+  },
+  {
+    "id": "year_pb_op3_biolord",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/op3/biolord_best_params_op3.yaml",
+    "path": "sources/year_pb_op3_biolord.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/op3/biolord_best_params_op3.yaml",
+    "sha256": "69376e061a07d4fc6a540a4c1539344bb16491e08be8e27236d3883e2b1d7178"
+  },
+  {
+    "id": "year_pb_frangieh21_cpa",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/frangieh21/cpa_best_params_frangieh21.yaml",
+    "path": "sources/year_pb_frangieh21_cpa.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/frangieh21/cpa_best_params_frangieh21.yaml",
+    "sha256": "5486394436db7aef469c42eba10fdb8bfdb6a9b67fc96b7401cf2c438b1244b7"
+  },
+  {
+    "id": "year_pb_frangieh21_linear",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/frangieh21/linear_best_params_frangieh21.yaml",
+    "path": "sources/year_pb_frangieh21_linear.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/frangieh21/linear_best_params_frangieh21.yaml",
+    "sha256": "24bfb53a614ee27fd2389af53209254e8fd23c4463e0dc1d4078db88195c1305"
+  },
+  {
+    "id": "year_pb_frangieh21_latent",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/frangieh21/latent_best_params_frangieh21.yaml",
+    "path": "sources/year_pb_frangieh21_latent.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/frangieh21/latent_best_params_frangieh21.yaml",
+    "sha256": "d081f7e637b9348f378cc07c962884abaa813013d8f6ce1eb4544624c6e44647"
+  },
+  {
+    "id": "year_pb_frangieh21_biolord",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/frangieh21/biolord_best_params_frangieh21.yaml",
+    "path": "sources/year_pb_frangieh21_biolord.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/frangieh21/biolord_best_params_frangieh21.yaml",
+    "sha256": "cb8ead64de81de3607ffe5fea3256106ec5d3de1ecf74ddd6f6b0ac870ce0d91"
+  },
+  {
+    "id": "year_pb_jiang24_cpa",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/jiang24/cpa_best_params_jiang24.yaml",
+    "path": "sources/year_pb_jiang24_cpa.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/jiang24/cpa_best_params_jiang24.yaml",
+    "sha256": "6dd18f15643d024af9e0ff2a144799a6d6f750fddee3674bc09f516cdea24018"
+  },
+  {
+    "id": "year_pb_jiang24_linear",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/jiang24/linear_best_params_jiang24.yaml",
+    "path": "sources/year_pb_jiang24_linear.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/jiang24/linear_best_params_jiang24.yaml",
+    "sha256": "798180ada8e75f521d0def1347cec1b95a171216f6e64dd96c6139d3d8500a39"
+  },
+  {
+    "id": "year_pb_jiang24_latent",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/jiang24/latent_best_params_jiang24.yaml",
+    "path": "sources/year_pb_jiang24_latent.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/jiang24/latent_best_params_jiang24.yaml",
+    "sha256": "3149703a218c8ef42a2ed42b93e86138738545a7a26d1721456eb01e90169a62"
+  },
+  {
+    "id": "year_pb_mcfaline23_cpa",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/mcfaline23/cpa_best_params_mcfaline23_full.yaml",
+    "path": "sources/year_pb_mcfaline23_cpa.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/mcfaline23/cpa_best_params_mcfaline23_full.yaml",
+    "sha256": "cf771a2b5e50de8a04d930f27c0cb7d614a4c58a8781e4c713579539bcb362dc"
+  },
+  {
+    "id": "year_pb_mcfaline23_linear",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/mcfaline23/linear_additive_best_params_mcfaline23_full.yaml",
+    "path": "sources/year_pb_mcfaline23_linear.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/mcfaline23/linear_additive_best_params_mcfaline23_full.yaml",
+    "sha256": "55cc23f28bba8d20a251bf985d657bc987f2fbcfe42fbbee5f86d8a2f6294b9b"
+  },
+  {
+    "id": "year_pb_mcfaline23_latent",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/experiment/neurips2025/mcfaline23/latent_additive_best_params_mcfaline23_full.yaml",
+    "path": "sources/year_pb_mcfaline23_latent.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/experiment/neurips2025/mcfaline23/latent_additive_best_params_mcfaline23_full.yaml",
+    "sha256": "70e527f2f0719cd190a310e5c1dd276716d3d7474733d6ed1929ba354f87fc47"
+  },
+  {
+    "id": "year_pb_train_defaults",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/train.yaml",
+    "path": "sources/year_pb_train_defaults.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/train.yaml",
+    "sha256": "a6dec88afa7829889ae2a5f97c1718b9a3e0d105b0804c9aa8c43c304b86a550"
+  },
+  {
+    "id": "year_pb_model_cpa",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/model/cpa.yaml",
+    "path": "sources/year_pb_model_cpa.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/model/cpa.yaml",
+    "sha256": "51325bc6018825f5e2347c58b806530c911213dc805155841b9fde83b6f874e2"
+  },
+  {
+    "id": "year_pb_model_latent_additive",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/model/latent_additive.yaml",
+    "path": "sources/year_pb_model_latent_additive.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/model/latent_additive.yaml",
+    "sha256": "ecf8069535ab6bf34138bf9593e2b776aa843eaf9005139d106d3c371acafcae"
+  },
+  {
+    "id": "year_pb_model_linear_additive",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/model/linear_additive.yaml",
+    "path": "sources/year_pb_model_linear_additive.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/model/linear_additive.yaml",
+    "sha256": "8b306cc97be9c1b20770ed0fca1fd359ab47c2cdfed4ce5958dacdbbc8704e5a"
+  },
+  {
+    "id": "year_pb_model_biolord",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/configs/model/biolord.yaml",
+    "path": "sources/year_pb_model_biolord.yaml",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/configs/model/biolord.yaml",
+    "sha256": "e182bb4567ca146bfbd2e363fc0788ea84e9dd1852938977d2a8c1848a36a541"
+  },
+  {
+    "id": "year_scpb_myGears",
+    "url": "https://raw.githubusercontent.com/bm2-lab/scPerturBench/698f8ff5ed19530bff171e4205be9b42a46a769d/Perturbation_generalization/Genetic/myGears.py",
+    "path": "sources/year_scpb_myGears.py",
+    "kind": "sources",
+    "source_repo": "bm2-lab/scPerturBench",
+    "source_commit": "698f8ff5ed19530bff171e4205be9b42a46a769d",
+    "source_path": "Perturbation_generalization/Genetic/myGears.py",
+    "sha256": "242ae1dd729389a02c714679534cfa10d7fcc0d8e2dfd9272c41f13fda1e12f0"
+  },
+  {
+    "id": "year_scpb_myscGPT1",
+    "url": "https://raw.githubusercontent.com/bm2-lab/scPerturBench/698f8ff5ed19530bff171e4205be9b42a46a769d/Perturbation_generalization/Genetic/myscGPT1.py",
+    "path": "sources/year_scpb_myscGPT1.py",
+    "kind": "sources",
+    "source_repo": "bm2-lab/scPerturBench",
+    "source_commit": "698f8ff5ed19530bff171e4205be9b42a46a769d",
+    "source_path": "Perturbation_generalization/Genetic/myscGPT1.py",
+    "sha256": "a835667b74821aee5f248fe2309355e7014952f7753e602f3922f4c572d59c5a"
+  },
+  {
+    "id": "year_scpb_myAttentionPert",
+    "url": "https://raw.githubusercontent.com/bm2-lab/scPerturBench/698f8ff5ed19530bff171e4205be9b42a46a769d/Perturbation_generalization/Genetic/myAttentionPert.py",
+    "path": "sources/year_scpb_myAttentionPert.py",
+    "kind": "sources",
+    "source_repo": "bm2-lab/scPerturBench",
+    "source_commit": "698f8ff5ed19530bff171e4205be9b42a46a769d",
+    "source_path": "Perturbation_generalization/Genetic/myAttentionPert.py",
+    "sha256": "06801d35f5ed405087c3cfda8e024240547cba2287f6bc15739b56cedb1095b8"
+  },
+  {
+    "id": "year_scpb_trvae",
+    "url": "https://raw.githubusercontent.com/bm2-lab/scPerturBench/698f8ff5ed19530bff171e4205be9b42a46a769d/Cellular_context_generalization/o.o.d./mytrVAE.py",
+    "path": "sources/year_scpb_trvae.py",
+    "kind": "sources",
+    "source_repo": "bm2-lab/scPerturBench",
+    "source_commit": "698f8ff5ed19530bff171e4205be9b42a46a769d",
+    "source_path": "Cellular_context_generalization/o.o.d./mytrVAE.py",
+    "sha256": "736e3050dd9ff8866d69d0dabec4449942c97656d67868ceea0fafe6c46282af"
+  },
+  {
+    "id": "year_pertpy_references",
+    "url": "https://raw.githubusercontent.com/scverse/pertpy/a4c30738468f8cb6bed677efb9331a9e35a168bd/docs/references.bib",
+    "path": "sources/year_pertpy_references.bib",
+    "kind": "sources",
+    "source_repo": "scverse/pertpy",
+    "source_commit": "a4c30738468f8cb6bed677efb9331a9e35a168bd",
+    "source_path": "docs/references.bib",
+    "sha256": "0d9a98d3d92486a622f81c99cdf49cc809bdeda63f68392b184b11cf9005c8ff"
+  },
+  {
+    "id": "year_chemcpa_readme",
+    "url": "https://raw.githubusercontent.com/theislab/chemCPA/43e830eb0958c54e4aa64442c17ec0fed19b3f15/README.md",
+    "path": "sources/year_chemcpa_readme.md",
+    "kind": "sources",
+    "source_repo": "theislab/chemCPA",
+    "source_commit": "43e830eb0958c54e4aa64442c17ec0fed19b3f15",
+    "source_path": "README.md",
+    "sha256": "126ec3cba114b231545e32a6b06bb33e36573f0be5c929d35e84bcf45bce74e7"
+  },
+  {
+    "id": "year_chemcpa_preprocessing",
+    "url": "https://raw.githubusercontent.com/theislab/chemCPA/43e830eb0958c54e4aa64442c17ec0fed19b3f15/preprocessing/README.md",
+    "path": "sources/year_chemcpa_preprocessing.md",
+    "kind": "sources",
+    "source_repo": "theislab/chemCPA",
+    "source_commit": "43e830eb0958c54e4aa64442c17ec0fed19b3f15",
+    "source_path": "preprocessing/README.md",
+    "sha256": "6f2fd1efd448c59f577f47c7c1572e9486454c488bb4a1816cf9e5ca42621790"
+  },
+  {
+    "id": "year_chemcpa_experiments",
+    "url": "https://raw.githubusercontent.com/theislab/chemCPA/43e830eb0958c54e4aa64442c17ec0fed19b3f15/experiments/README.md",
+    "path": "sources/year_chemcpa_experiments.md",
+    "kind": "sources",
+    "source_repo": "theislab/chemCPA",
+    "source_commit": "43e830eb0958c54e4aa64442c17ec0fed19b3f15",
+    "source_path": "experiments/README.md",
+    "sha256": "fab97b6881c382df5b681c622e8c6e122f34e04da312d7169ae8b8803744a2d2"
+  },
+  {
+    "id": "year_scgen_trainer",
+    "url": "https://raw.githubusercontent.com/theislab/scgen-reproducibility/5e6fbc22bfaf17c6e1460e5fde3d24629cd62605/code/ModelTrainer.py",
+    "path": "sources/year_scgen_trainer.py",
+    "kind": "sources",
+    "source_repo": "theislab/scgen-reproducibility",
+    "source_commit": "5e6fbc22bfaf17c6e1460e5fde3d24629cd62605",
+    "source_path": "code/ModelTrainer.py",
+    "sha256": "801c54b5e5b946b856662b782e652317321e6da5b6dcf05737fbc68028bd7426"
+  },
+  {
+    "id": "year_scgen_downloader",
+    "url": "https://raw.githubusercontent.com/theislab/scgen-reproducibility/5e6fbc22bfaf17c6e1460e5fde3d24629cd62605/code/DataDownloader.py",
+    "path": "sources/year_scgen_downloader.py",
+    "kind": "sources",
+    "source_repo": "theislab/scgen-reproducibility",
+    "source_commit": "5e6fbc22bfaf17c6e1460e5fde3d24629cd62605",
+    "source_path": "code/DataDownloader.py",
+    "sha256": "02789d2c47e43d48850cad551e8fd07600a0492f87104393e305858c6ffe8bef"
+  },
+  {
+    "id": "year_scgpt_perturbation",
+    "url": "https://raw.githubusercontent.com/bowang-lab/scGPT/cebd6fae655b9c585a4807daa3ac31bb764f06b4/tutorials/Tutorial_Perturbation.ipynb",
+    "path": "sources/year_scgpt_perturbation.ipynb",
+    "kind": "sources",
+    "source_repo": "bowang-lab/scGPT",
+    "source_commit": "cebd6fae655b9c585a4807daa3ac31bb764f06b4",
+    "source_path": "tutorials/Tutorial_Perturbation.ipynb",
+    "sha256": "a997191d88e4c05969103e777f1323ebf4263238e64520877ae3a0f6aed4bdbb"
+  },
+  {
+    "id": "sciplex_primary",
+    "url": "https://raw.githubusercontent.com/cole-trapnell-lab/cole-trapnell-lab.github.io/a7ead73c4da7190d05b4928ace5b67d457329114/pdfs/papers/srivatsan_mcfaline_ramani_sci-plex_Science_2019.pdf",
+    "path": "papers/sciplex_primary.pdf",
+    "kind": "paper",
+    "source_repo": "cole-trapnell-lab/cole-trapnell-lab.github.io",
+    "source_commit": "a7ead73c4da7190d05b4928ace5b67d457329114",
+    "source_path": "pdfs/papers/srivatsan_mcfaline_ramani_sci-plex_Science_2019.pdf",
+    "sha256": "cb9efb6c90af5c4ecc744e7235ec8bbdd4cb7971e75c16afb7946b8bbf16af93"
+  },
+  {
+    "id": "gxe_primary",
+    "url": "https://raw.githubusercontent.com/cole-trapnell-lab/cole-trapnell-lab.github.io/a7ead73c4da7190d05b4928ace5b67d457329114/pdfs/papers/mcfaline-sci-plex-gxe.pdf",
+    "path": "papers/gxe_primary.pdf",
+    "kind": "paper",
+    "source_repo": "cole-trapnell-lab/cole-trapnell-lab.github.io",
+    "source_commit": "a7ead73c4da7190d05b4928ace5b67d457329114",
+    "source_path": "pdfs/papers/mcfaline-sci-plex-gxe.pdf",
+    "sha256": "61e6b12447a05c7552efdd67a68caec3928e74ac4456f6ef6da3942ef1c2f89f"
+  },
+  {
+    "id": "gasperini_primary",
+    "url": "https://raw.githubusercontent.com/cole-trapnell-lab/cole-trapnell-lab.github.io/a7ead73c4da7190d05b4928ace5b67d457329114/pdfs/papers/gasperini-crispri.pdf",
+    "path": "papers/gasperini_primary.pdf",
+    "kind": "paper",
+    "source_repo": "cole-trapnell-lab/cole-trapnell-lab.github.io",
+    "source_commit": "a7ead73c4da7190d05b4928ace5b67d457329114",
+    "source_path": "pdfs/papers/gasperini-crispri.pdf",
+    "sha256": "9eea2226336117eb5e81253ce893a710b6ac290c959fd7a533e37681897bb262"
   }
 ]

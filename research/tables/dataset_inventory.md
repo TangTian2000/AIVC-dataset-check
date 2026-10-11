@@ -26,7 +26,7 @@
 |papalexi2021 / papalexi2021|THP-1；CRISPR-cas9|scPerturBench README把Papalexi列作预置benchmark数据；需进一步定位确切split；scPerturBench公开genetic single结果DataSet=Papalexi；预测benchmark采用已证实；训练/测试边界本轮未读取；Mixscape原任务是扰动识别；遗传单扰动泛化benchmark评测；各方法训练/微调细节须原脚本核验|否；KO效力与质量指标研究的补充，不先认定适合batch外推|
 |tian2019 / tian2019|iPSC derived neurons；CRISPRi|scPerturb/pertpy 收录与 E-distance 分析；不能据此称预测模型常用；整合资源分析；训练/微调/预测测试未证实；预训练未证实|否；跨分化背景补充；未找到技术批次复现证据|
 |tian2021 / tian2021|human iPSC-derived neurons；CRISPRa|scPerturb/pertpy 收录与 E-distance 分析；不能据此称预测模型常用；scPerturBench公开genetic single结果DataSet=TianActivation/TianInhibition（模式一致，具体原文件版本待核验）；整合资源分析；训练/微调/预测测试未证实；预训练未证实；遗传单扰动泛化benchmark评测；各方法训练/微调细节须原脚本核验|否；同背景i/a比较；需解决文档口径冲突后再采用|
-|gasperini2019 / gasperini2019|K562；CRISPRi|scPerturb/pertpy 收录与 E-distance 分析；不能据此称预测模型常用；整合资源分析；训练/微调/预测测试未证实；预训练未证实|否；enhancer组合复杂；不直接同基因扰动模型输入对齐|
+|gasperini2019 / gasperini2019|K562；CRISPRi|scPerturb/pertpy 收录与 E-distance 分析；不能据此称预测模型常用；整合资源分析；训练/微调/预测测试未证实；预训练未证实|原文补充核查；细胞级未完成；优先核实明确的RT后建库批次；需同guide组合和对照跨批次数量|
 |shifrut2018 / shifrut2018|Primary Human T Cells；CRISPR-cas9, TCR stim|scPerturb/pertpy 收录与 E-distance 分析；不能据此称预测模型常用；整合资源分析；训练/微调/预测测试未证实；预训练未证实|否；原代T细胞补充；纯技术batch研究须另找供体内重复|
 |xie2017 / xie2017|K562；CRISPR-cas9|scPerturb/pertpy 收录与 E-distance 分析；不能据此称预测模型常用；整合资源分析；训练/微调/预测测试未证实；预训练未证实|否；enhancer扰动补充；预测常用及技术重复证据不足|
 |zhao2021 / zhao2021|glioblastoma, patient tissue；drugs|CellOT gbm task配置；原始对应由代码ZhaoSims2021映射支持；模型训练/跨patient测试；生物泛化|否；可作临床背景泛化补充；技术重复需原实验对应|

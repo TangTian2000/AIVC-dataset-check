@@ -1,11 +1,11 @@
-dataset_id,cell_metadata_status,batch_x_perturbation_cell_counts,controls_by_batch_cell_counts,strict_cell_condition_coverage,batch_context_dose_time_cell_crosstabs,design_statistics,independent_technical_batch_proven,expression_batch_strength
-sciplex3,not_obtained,not_computed,not_computed,not_computed,not_computed,computed; sample-level only,no,not_evaluated
-replogle2022_k562_gwps,not_obtained,not_computed,not_computed,not_computed,not_computed,source/schema audit only,no,not_evaluated
-replogle2022_rpe1,not_obtained,not_computed,not_computed,not_computed,not_computed,source/schema audit only,no,not_evaluated
-mcfarland2020,not_obtained,not_computed,not_computed,not_computed,not_computed,computed; experiment declarations only,no,not_evaluated
-op3_2023,not_obtained,not_computed,not_computed,not_computed,not_computed,source/schema audit only,no,not_evaluated
-frangieh2021,not_obtained,not_computed,not_computed,not_computed,not_computed,source/schema audit only,no,not_evaluated
-mcfaline2023,not_obtained,not_computed,not_computed,not_computed,not_computed,source/schema audit only,no,not_evaluated
-kang2018,not_obtained,not_computed,not_computed,not_computed,not_computed,source/schema audit only,no,not_evaluated
-norman2019,not_obtained,not_computed,not_computed,not_computed,not_computed,source/schema audit only,no,not_evaluated
-parse_cytokines,not_obtained,not_computed,not_computed,not_computed,not_computed,source/schema audit only,no,not_evaluated
+dataset_id,cell_metadata_status,batch_x_perturbation_cell_counts,controls_by_batch_cell_counts,strict_cell_condition_coverage,batch_context_dose_time_cell_crosstabs,design_statistics,independent_technical_batch_proven,cell_level_batch_mapping_validated,expression_batch_strength
+sciplex3,not_obtained,not_computed,not_computed,not_computed,not_computed,computed; sample-level only,primary paper supports biological replicates / independent transductions; cell mapping pending,no,not_evaluated
+replogle2022_k562_gwps,not_obtained,not_computed,not_computed,not_computed,not_computed,source/schema audit only,not established,no,not_evaluated
+replogle2022_rpe1,not_obtained,not_computed,not_computed,not_computed,not_computed,source/schema audit only,not established,no,not_evaluated
+mcfarland2020,not_obtained,not_computed,not_computed,not_computed,not_computed,computed; experiment declarations only,not established,no,not_evaluated
+op3_2023,not_obtained,not_computed,not_computed,not_computed,not_computed,source/schema audit only,not established,no,not_evaluated
+frangieh2021,not_obtained,not_computed,not_computed,not_computed,not_computed,source/schema audit only,not established,no,not_evaluated
+mcfaline2023,not_obtained,not_computed,not_computed,not_computed,not_computed,source/schema audit only,primary paper supports biological replicates / independent transductions; cell mapping pending,no,not_evaluated
+kang2018,not_obtained,not_computed,not_computed,not_computed,not_computed,source/schema audit only,not established,no,not_evaluated
+norman2019,not_obtained,not_computed,not_computed,not_computed,not_computed,source/schema audit only,not established,no,not_evaluated
+parse_cytokines,not_obtained,not_computed,not_computed,not_computed,not_computed,source/schema audit only,not established,no,not_evaluated

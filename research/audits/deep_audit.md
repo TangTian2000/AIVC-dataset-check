@@ -1,6 +1,6 @@
 # 深入审计报告
 
-日期：2026-10-11。先保存第一阶段总表，再深入核查；随后因State/Arc新证据补充Parse、Nadig、VCC。最终总表32个版本/子资源条目、28个候选家族。不是28个均已证明“常用”，也不是32个独立来源；缺少原研究身份核验的条目保留未知。第一阶段快照见 `tables/dataset_inventory_stage1.*`。
+日期：2026-10-11（UTC）（含新增原文核查）。先保存第一阶段总表，再深入核查；随后因State/Arc新证据补充Parse、Nadig、VCC。最终总表32个版本/子资源条目、28个候选家族。不是28个均已证明“常用”，也不是32个独立来源；缺少原研究身份核验的条目保留未知。第一阶段快照见 `tables/dataset_inventory_stage1.*`。
 
 本轮统一深入核查10个候选：sciPlex3、Replogle K562、Replogle RPE1、MIX-seq、OP3、Frangieh、sci-Plex G×E、Kang、Norman、Parse。Jiang24、Tahoe、Nadig、VCC完成有来源的扩展筛选，未冒充完成细胞级深审计。
 
@@ -22,13 +22,13 @@
 
 [算] 作者Supplementary Table 3有 **4,992个唯一hash样本键、52个plate_oligo、rep1/rep2两个标签、188种药+S0000 vehicle**。两个作者样本表的6个共同字段逐键完全相符，重复键为0。每个plate有96个设计样本、2个vehicle样本；每plate只对应一个cell_type、一个replicate和一个time_point，三个因素均嵌套在plate。
 
-[算] 24h：A549/K562/MCF7各188药×4剂量×2rep。72h：仅A549，47药×4剂量×2rep。编码dose为10/100/1000/10000，vehicle归零；浓度单位没有从数字本身推断，仍需原实验补充材料核验。处理样本 **4,888**，vehicle样本 **104**。严格条件标签含对照共2,448，均覆盖两rep及两plate标签；在设计表单位下，4,888个“留出组×非对照条件”均具有另一组同条件与背景/时间匹配对照。
+[算] 24h：A549/K562/MCF7各188药×4剂量×2rep。72h：仅A549，47药×4剂量×2rep。编码dose为10/100/1000/10000，vehicle归零；原文第2页已目视核实为10/100 nM、1/10 µM。处理样本 **4,888**，vehicle样本 **104**。严格条件标签含对照共2,448，均覆盖两rep及两plate标签；在设计表单位下，4,888个“留出组×非对照条件”均具有另一组同条件与背景/时间匹配对照。
 
 这不意味着每种药覆盖所有plate。不同plate承载不同药物子集，plate与面板部分混杂；只有重叠条件子集适合测试。72h不是三细胞系共享的独立技术batch，它是仅A549的不同生物条件。要保留time和cell_type，不能直接整合成同批次分布。
 
 [算] `valid_cells.tsv`有 **649,340个唯一细胞ID**（18,484,236 bytes）。该文件只有ID，没有细胞到hash/replicate/培养板/处理的映射。这一枚举不是重新验证h5ad矩阵行数，也不能把649,340均分到4,992个样本。完整cell obs仍未取得。因此 **真实batch×perturbation细胞数、每batch对照细胞数、QC后跨batch覆盖、每条件可训练细胞数未计算**。
 
-[推] fixed cell_type/dose/time的replicate留出与配对plate留出很有希望；需要原作者证明rep1/rep2是独立培养/处理，而非同源细胞的技术拆分。若只能证明索引板差异，则任务只能声称相应技术层级泛化。
+[文] 原文第2页明确重复培养板和孔位随机化，第4页Fig.3A明确biological replicate，已支持生物学重复设计。见 E32 [sciPlex原文 PDF pp2,4,6](https://raw.githubusercontent.com/cole-trapnell-lab/cole-trapnell-lab.github.io/a7ead73c4da7190d05b4928ace5b67d457329114/pdfs/papers/srivatsan_mcfaline_ramani_sci-plex_Science_2019.pdf)。[推] 固定背景、剂量和时间留出重复很有希望；仍需逐细胞对应及培养日期/lot、索引板、建库、测序关系，不能把52个板当52次独立实验。
 
 [未知] culture_plate与独立培养日期/lot、建库/测序run的映射；每rep/plate过滤后的细胞数；真实批次强度。下一步下载GSM4150378完整cell metadata或请作者导出`colData(cds)`，保留hash与所有索引步骤。无需先下载大表达矩阵。
 
@@ -94,9 +94,9 @@
 
 [未知] 相同guide×免疫背景是否跨独立培养/library，NTC逐背景/逐batch数，背景/患者/技术层级嵌套。SCP/Zenodo受阻，未下载全obs。当前作为机制与G×E补充候选，技术批次主任务信息不足。
 
-## 7. sci-Plex G×E（McFaline-Figueroa2023）
+## 7. sci-Plex G×E（McFaline-Figueroa2024；benchmark别名McFaline23）
 
-[二] 原文件GSM7056148 GxE1与GSM7056149 GxE2，benchmark从RDS转h5ad并合并GxE1/A172/T98G/U87MG。这是同研究不同实验与细胞背景，不能冒充多个独立数据源，也不能直接作为技术重复。DOI来自pertpy参考，正式题名尚未从原文核实。见 E19 [PerturBench G×E原文件下载/转换](https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/notebooks/neurips2025/data_curation/curate_McFalineFigueroa23_step1.R#L38)、E06 [pertpy数据文档与loader（整合方）](https://raw.githubusercontent.com/scverse/pertpy/a4c30738468f8cb6bed677efb9331a9e35a168bd/src/pertpy/data/_datasets.py#L29)。
+[二] 原文件GSM7056148 GxE1与GSM7056149 GxE2，benchmark从RDS转h5ad并合并GxE1/A172/T98G/U87MG。这是同研究不同实验与细胞背景，不能冒充多个独立数据源，也不能直接作为技术重复。原文已核实正式题名、GSE225775及作者sci-Plex-GxE仓库；2024-01-25发表，2024-02-14卷期，不能从DOI中的2023推断发表年。见 E33 [G×E原文 PDF pp7,15,20,22–23](https://raw.githubusercontent.com/cole-trapnell-lab/cole-trapnell-lab.github.io/a7ead73c4da7190d05b4928ace5b67d457329114/pdfs/papers/mcfaline-sci-plex-gxe.pdf)。见 E19 [PerturBench G×E原文件下载/转换](https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/notebooks/neurips2025/data_curation/curate_McFalineFigueroa23_step1.R#L38)、E06 [pertpy数据文档与loader（整合方）](https://raw.githubusercontent.com/scverse/pertpy/a4c30738468f8cb6bed677efb9331a9e35a168bd/src/pertpy/data/_datasets.py#L29)。
 
 [二] 元数据含`gene_id,treatment,dose,cell_type`；组合gene_id逗号转+，NTC/random/NA被benchmark转control。NA是否原始对照或未分配guide，必须原文件/设计核实，不根据转换规则把缺失当阴性对照。
 
@@ -104,7 +104,11 @@
 
 [推] 遗传×药物条件非常适合检查校正是否删除生物反应；但纯技术batch外推必须在同cell_type/gene/chemical/dose/time内定义。
 
-[未知] GxE1/2共同面板、独立重复、plate/pool/library/run映射、背景内NTC数量。GEO受阻，未下载hash长表；若该长表很大，优先请求作者导出去歧义后的cell-level plate标签及RNA-QC ID，不下载整个RDS来猜批次。当前补充候选。
+[文] kinome screen原文明确两次独立转导、1,052,205细胞；使用4个RT板和4个连接板，部分实验复用hash但不混池，分配不同RT孔。[未知] GxE1/2与这些实验的精确对应、逐细胞转导/plate/pool/library/run映射、背景内NTC数量。GEO受阻，未下载hash长表；若该长表很大，优先请求作者导出去歧义后的cell-level plate标签及RNA-QC ID，不下载整个RDS来猜批次。当前补充候选。
+
+### 新增原文核查：Gasperini2019
+
+[文] STAR Methods明确规模实验32个10x lane在RT后分成两批各16 lane继续建库，提供了实际技术批次定义；差异表达方法明确将`prep_batch`纳入Monocle2回归模型，但不能据此声称预测泛化改善。原文两个at-scale实验共254,974细胞、5,920候选enhancers；2019-01-03发表、01-10卷期。见 E34 [Gasperini原文 STAR Methods / Single cell transcriptome capture](https://raw.githubusercontent.com/cole-trapnell-lab/cole-trapnell-lab.github.io/a7ead73c4da7190d05b4928ace5b67d457329114/pdfs/papers/gasperini-crispri.pdf)。[未知] 逐细胞lane→两批对应、同guide组合及对照的跨批次数量。因此升级为优先核实建库批次的候选；这不是独立培养重复，也尚不能宣布留批次测试可执行。
 
 ## 8. Kang2018 IFN-β PBMC
 
@@ -184,6 +188,9 @@ Jiang24已确认5个IFNB/IFNG/INS/TGFB/TNFA RDS和benchmark训练使用；`treat
 - E28 [sci-Plex原作者重复性分析代码](https://raw.githubusercontent.com/cole-trapnell-lab/sci-plex/079639c50811dd43a206a779ab2f0199a147c98f/large_screen/Notebook17_Replicability_DEG_test.R#L1)
 - E29 [Replogle下游过滤notebook / Cell5](https://raw.githubusercontent.com/sanderlab/scPerturb/b69f72a070a92bcbaf41e7f9897b11598109ab48/revision/notebooks/replogle_handling.ipynb)
 - E30 [State Tahoe训练与fewshot评测配置](https://raw.githubusercontent.com/arcinstitute/state/9bbfe78a434a55205e4de834e1ea99f85f7a3add/state_preprint_toml_files/tahoe_tomls/generalization.toml#L8)
+- E32 [sciPlex原文 PDF pp2,4,6](https://raw.githubusercontent.com/cole-trapnell-lab/cole-trapnell-lab.github.io/a7ead73c4da7190d05b4928ace5b67d457329114/pdfs/papers/srivatsan_mcfaline_ramani_sci-plex_Science_2019.pdf)
+- E33 [G×E原文 PDF pp7,15,20,22–23](https://raw.githubusercontent.com/cole-trapnell-lab/cole-trapnell-lab.github.io/a7ead73c4da7190d05b4928ace5b67d457329114/pdfs/papers/mcfaline-sci-plex-gxe.pdf)
+- E34 [Gasperini原文 STAR Methods / Single cell transcriptome capture](https://raw.githubusercontent.com/cole-trapnell-lab/cole-trapnell-lab.github.io/a7ead73c4da7190d05b4928ace5b67d457329114/pdfs/papers/gasperini-crispri.pdf)
 - E31 [State Replogle合并目录/训练配置](https://raw.githubusercontent.com/arcinstitute/state/9bbfe78a434a55205e4de834e1ea99f85f7a3add/state_preprint_toml_files/replogle_tomls/k562.toml#L2)
 
 每个下载对象的精确commit、URL、byte数与SHA-256见 `resources.json` 和 `download_log.jsonl`。本轮计算见 `tables/*_design/summary.json`；网络拒绝与尺寸未知见 `access_log.jsonl`。没有找到batch记录，不等于没有batch effect。

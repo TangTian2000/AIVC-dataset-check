@@ -6,6 +6,8 @@
 
 - [成果总入口](research/README.md)
 - [数据集总表](research/tables/dataset_inventory.md) / [完整CSV](research/tables/dataset_inventory.csv)
+- [新增：年份、规模、文件大小与模型训练用途](research/tables/dataset_year_size_models.md)
+- [三篇原论文下载阅读与批次证据](research/papers/reading_notes.md)
 - [深入审计报告](research/audits/deep_audit.md)
 - [已取得信息、具体发现与缺口对照表](research/audit_progress_summary.md)
 - [分级推荐](research/recommendations.md)

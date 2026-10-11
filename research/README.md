@@ -17,11 +17,17 @@
 
 “正式名称/原论文/发表状态”未核实的字段写未知，未用仓库年份猜出版；公开URL不代表已读取数据；metadata字段名不等于批次物理含义。所有文档明确区分原作者说明、整合代码、设计表计算、有条件推测和未知。
 
+## 本次补充：年份、大小、模型与原论文
+
+- [32项年份、细胞/特征规模、文件大小和模型用途](tables/dataset_year_size_models.md)；[模型角色逐条证据CSV](tables/dataset_model_training_evidence.csv)。
+- [三篇原文阅读记录及批次证据修订](papers/reading_notes.md)：作者公开PDF可下载读取，sciPlex/G×E/Gasperini已完成。PDF全文仅作本地缓存，仓库保存链接和复现脚本。
+- 新增论文抽取步骤依赖系统`poppler-utils`；新克隆先运行`fetch_resources.py`获取冻结来源，再运行`run_all.sh`。
+
 ## 关键结果
 
-sciPlex3有4,992处理样本、188种药、52培养板hash标签与两个replicate标签，每板2个vehicle样本；24h三背景，72h仅A54947药。严格背景/剂量/时间条件有跨rep设计，但完整cell-to-hash及独立培养证明尚缺。MIX-seq作者声明Trametinib24h跨expt1/3，并指定DMSO参照；OP3官方schema有plate/donor/dose/time，值得核实供体内技术重复。
+sciPlex3有4,992处理样本、188种药、52培养板hash标签与两个replicate标签，每板2个vehicle样本；24h三背景，72h仅A54947药。严格背景/剂量/时间条件有跨rep设计，但原文已支持生物学重复和重复培养板；完整cell-to-hash及下游建库/run映射尚缺。MIX-seq作者声明Trametinib24h跨expt1/3，并指定DMSO参照；OP3官方schema有plate/donor/dose/time，值得核实供体内技术重复。
 
-本轮79个经审阅来源/metadata对象中，78个已存盘并冻结SHA-256；一个55MB benchmark结果CSV因上限而禁用（不是表达矩阵）。官方外部资料的16个代表性HEAD访问检查均遭代理403，文件大小保持未知。GitHub作者源码可读，因此仍完成了上述独立工作。
+当前冻结清单含120个来源/metadata对象（详见索引和下载记录）；一个55MB benchmark结果CSV因上限而禁用（不是表达矩阵）。官方外部资料的16个代表性HEAD访问检查均遭代理403，文件大小保持未知。GitHub作者源码可读，因此仍完成了上述独立工作。
 
 ## 复现
 

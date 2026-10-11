@@ -85,7 +85,7 @@ def sciplex_design():
     write(d.groupby('plate_oligo').agg(n_design_samples=('treatment','size'),n_cell_backgrounds=('cell_type','nunique'),n_replicate_labels=('replicate','nunique'),n_timepoints=('time_point','nunique')).reset_index(),out/'plate_nesting.csv')
     summaries={}
     for key in ['plate_oligo','replicate']:
-        summaries[key]=audit_frame(d,out/key,key,'treatment',['cell_type','dose','time_point'],['S0000'],'n_design_samples','Author Supplementary_Table_3 + hashMeta mapping; NOT cells. plate_oligo maps to culture_plate in Notebook1. replicate labels are not yet proven independent culture runs.')
+        summaries[key]=audit_frame(d,out/key,key,'treatment',['cell_type','dose','time_point'],['S0000'],'n_design_samples','Author Supplementary_Table_3 + hashMeta mapping; NOT cells. plate_oligo maps to culture_plate in Notebook1. Primary paper supports biological replicates and replicate culture plates; exact cell/library/run mapping pending.')
     result=dict(sample_rows=len(d),unique_cell_ids_without_annotations=len(ids),cell_ids_file_bytes=(R/'metadata/scplex_valid_cells.tsv').stat().st_size,cell_metadata_mapping_available=False,drug_labels_excluding_control=int(d.loc[d.treatment!='S0000','treatment'].nunique()),all_plates=int(d.plate_oligo.nunique()),timepoints=sorted(map(int,d.time_point.unique())),details=summaries)
     (out/'summary.json').write_text(json.dumps(result,ensure_ascii=False,indent=2));print('sciPlex3',json.dumps(result,ensure_ascii=False))
     s=pd.read_csv(R/'metadata/scplex_hashSampleSheet.txt',sep='\t',header=None,names=['encoded_sample','hash_oligo','sheet_column3','empty'],keep_default_na=False)

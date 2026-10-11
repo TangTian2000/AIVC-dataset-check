@@ -4,7 +4,7 @@
 
 |优先级/对象|需要的文件或说明|核实问题|无需大矩阵的首选路径|
 |---|---|---|---|
-|P1 sciPlex3|GSM4150378 `colData(cds)`/cell metadata，含cell/hash/culture_plate/replicate/RT/ligation/PCR及QC|rep1/2是否独立培养？index plates是否嵌套或跨培养plate？测序run如何映射？|GEO单独cellMetadata文件；作者导出obs；若只提供RDS，先HEAD记录大小，再请求小导出|
+|P1 sciPlex3|GSM4150378 `colData(cds)`/cell metadata，含cell/hash/culture_plate/replicate/RT/ligation/PCR及QC|原文已支持生物学重复；rep1/2如何映射培养日期/lot？index plates是否嵌套或跨培养plate？测序run如何映射？|GEO单独cellMetadata文件；作者导出obs；若只提供RDS，先HEAD记录大小，再请求小导出|
 |P1 MIX-seq|Figshare10298696 file listing、每实验cell_info/metadata及sample设计|expt1/3共有细胞系、Trametinib24h剂量与培养pool是否相同？每库对照？|API文件列表后只下载cell metadata；Taiga内部凭据不是公开获取前提|
 |P1 OP3|GSE279945完整scRNA obs、plate/well/pool/library/run设计表|供体内同药是否跨plate重复？每plate DMSO？positive controls是否和药物一起保留？|全obs导出，不以de_train.uns[single_cell_obs]训练子集替代整个实验|
 |P1 Replogle K562/RPE1|各原raw_singlecell文件obs、gem_group→culture/sample/library/run映射|同gene和同guide跨GEM覆盖；GEM独立培养还是同pool拆库？essential day6/7到底是什么？|GWPS官方metadata或作者obs导出；分开GWPS/essential/RPE1|

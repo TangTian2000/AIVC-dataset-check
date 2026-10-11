@@ -1,5 +1,7 @@
 # 数据集调查结果、已取得资料与缺口
 
+> 2026-10-11（UTC）补充：已下载读取三篇原文，sciPlex生物学重复、G×E两次独立转导、Gasperini RT后两批建库已有直接证据；下文早期“未知”不再适用于这些已确认设计。最新逐项修订见[原文阅读记录](papers/reading_notes.md)、[审计报告](audits/deep_audit.md)；新增[32项年份、规模与模型用途表](tables/dataset_year_size_models.md)。完整细胞级映射及批次细胞数仍未取得。
+
 日期：2026-10-11。此表覆盖总表的全部32个条目；同一研究的细胞系或子实验不是独立数据源。具体来源URL、版本和证据索引见 [完整总表CSV](tables/dataset_inventory.csv)、[深入报告](audits/deep_audit.md)、[来源索引](sources/evidence_index.csv)。这次只是重新整理已取得的证据，没有新增细胞元数据或实验结果。
 
 ## 如何理解“已经拿到”和“还缺什么”

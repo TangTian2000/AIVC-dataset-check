@@ -64,6 +64,19 @@ for row in rows:
   row.update(known_batch_replicates='本轮作者代码解析30声明数据集、5 expt_batch：expt1/2/3/5/10；不声称expt4/6也已核实')
  if row['dataset_id']=='op3_2023':
   row.update(control='DMSO negative control；belinostat/dabrafenib为positive controls（PerturBench curation，须原文核对）',dose_time='24h（官方README）；benchmark引用原文：belinostat0.1µM、DMSO14.1µM、其他1µM，未经原文全文复核')
+# Primary PDFs downloaded and read on 2026-10-11（UTC）; preserve stable dataset IDs.
+for row in rows:
+ if row['family_id']=='srivatsan2020':
+  row.update(publication_status='Science：2019-12-05在线；2020-01-03卷期（原文）',evidence_level='原论文全文 + 作者代码；sciPlex3另有样本设计表计算',source_urls=row['source_urls']+' ; '+src('sciplex_primary'))
+ if row['dataset_id']=='sciplex3':
+  row.update(dose_time='10/100 nM、1/10 µM；24h三细胞系188药；72h仅A54947药（后者为样本表计算）',cell_count_and_scope='原文大型screen QC后649,340细胞；本轮valid_cells亦有649,340唯一ID，但未取得完整细胞注释',known_batch_replicates='原文p2重复培养板，p4 Fig3A biological replicate；设计表rep1/rep2、52板，每板2 vehicle样本。培养日期/lot、索引板/建库/run逐细胞映射未知')
+ if row['dataset_id']=='mcfaline2023':
+  row.update(formal_name='sci-Plex G×E (McFaline-Figueroa 2024; benchmark alias McFaline23)',original_paper='Multiplex single-cell chemical genomics reveals the kinase dependence of the response to targeted therapy',publication_status='Cell Genomics：2024-01-25 Published；2024-02-14卷期（原文）',accession='GSE225775；GSM7056148/GSM7056149',official_data_url='https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE225775',author_code_url='https://github.com/cole-trapnell-lab/sci-Plex-GxE',cell_count_and_scope='原文kinome screen 1,052,205细胞；不是所有GxE处理版本行数',perturbation_count_and_scope='kinome screen：522 kinases、3,165 sgRNAs；14,121 gene×environment组合×两次转导=28,242条件',known_batch_replicates='原文p7两次独立转导；p22 kinome用4 RT板/4连接板，部分实验复用hash但分配不同RT孔不混池。逐细胞转导/培养/建库/run映射仍缺',evidence_level='原论文全文 + benchmark处理代码；未取得完整cell obs',source_urls=row['source_urls']+' ; '+src('gxe_primary'))
+ if row['dataset_id'].startswith('gasperini'):
+  row.update(publication_status='Cell：2019-01-03 Published；2019-01-10卷期（原文）',cell_count_and_scope='原文两个at-scale实验合计254,974细胞',perturbation_count_and_scope='原文5,920候选enhancers；不能当独立重复数',known_batch_replicates='STAR Methods：规模实验32个10x lane，RT后分两批各16 lane完成其余建库；不是两次独立培养。细胞→lane→两批映射待获取',screening_reason='优先核实明确的RT后建库批次；需同guide组合和对照跨批次数量',deep_audit='原文补充核查；细胞级未完成',evidence_level='原论文全文；建库分批设计明确',source_urls=row['source_urls']+' ; '+src('gasperini_primary'))
+ if row['dataset_id']=='dong2023':
+  row.update(publication_status='Nature Methods 2023（pertpy参考文献）',paper_url='https://doi.org/10.1038/s41592-023-02040-5',source_urls=row['source_urls']+' ; '+src('year_pertpy_references'))
+
 # Benchmark result records add adoption evidence without equating ambiguous experiment labels.
 for row in rows:
  if row['dataset_id'] in ['adamson2016','frangieh2021','papalexi2021','tian2021','replogle2022_k562_essential','replogle2022_rpe1']:

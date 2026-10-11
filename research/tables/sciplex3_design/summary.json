@@ -27,7 +27,7 @@
       "strict_conditions_cross_groups": 2448,
       "eligible_heldout_condition_groups": 4888,
       "evaluated_heldout_condition_groups": 4888,
-      "provenance": "Author Supplementary_Table_3 + hashMeta mapping; NOT cells. plate_oligo maps to culture_plate in Notebook1. replicate labels are not yet proven independent culture runs."
+      "provenance": "Author Supplementary_Table_3 + hashMeta mapping; NOT cells. plate_oligo maps to culture_plate in Notebook1. Primary paper supports biological replicates and replicate culture plates; exact cell/library/run mapping pending."
     },
     "replicate": {
       "unit": "n_design_samples",
@@ -46,7 +46,7 @@
       "strict_conditions_cross_groups": 2448,
       "eligible_heldout_condition_groups": 4888,
       "evaluated_heldout_condition_groups": 4888,
-      "provenance": "Author Supplementary_Table_3 + hashMeta mapping; NOT cells. plate_oligo maps to culture_plate in Notebook1. replicate labels are not yet proven independent culture runs."
+      "provenance": "Author Supplementary_Table_3 + hashMeta mapping; NOT cells. plate_oligo maps to culture_plate in Notebook1. Primary paper supports biological replicates and replicate culture plates; exact cell/library/run mapping pending."
     }
   }
 }

@@ -41,6 +41,9 @@ refs={
 'E28':('scplex_Notebook17_Replicability_DEG_test_R','sci-Plex原作者重复性分析代码','rep'),
 'E29':('scperturb_replogle_handling_ipynb','Replogle下游过滤notebook / Cell5',''),
 'E30':('state_tahoe_tomls_generalization_toml','State Tahoe训练与fewshot评测配置','[training]'),
+'E32':('sciplex_primary','sciPlex原文 PDF pp2,4,6',''),
+'E33':('gxe_primary','G×E原文 PDF pp7,15,20,22–23',''),
+'E34':('gasperini_primary','Gasperini原文 STAR Methods / Single cell transcriptome capture',''),
 'E31':('state_replogle_tomls_k562_toml','State Replogle合并目录/训练配置','replogle_nogwps_v2'),
 }
 def e(k):return k+' '+ref(*refs[k])
@@ -48,7 +51,7 @@ bib='\n'.join('- '+e(k) for k in refs)
 summary=json.loads((R/'tables/sciplex3_design/summary.json').read_text())
 report=f'''# 深入审计报告
 
-日期：2026-10-11。先保存第一阶段总表，再深入核查；随后因State/Arc新证据补充Parse、Nadig、VCC。最终总表32个版本/子资源条目、28个候选家族。不是28个均已证明“常用”，也不是32个独立来源；缺少原研究身份核验的条目保留未知。第一阶段快照见 `tables/dataset_inventory_stage1.*`。
+日期：2026-10-11（UTC）（含新增原文核查）。先保存第一阶段总表，再深入核查；随后因State/Arc新证据补充Parse、Nadig、VCC。最终总表32个版本/子资源条目、28个候选家族。不是28个均已证明“常用”，也不是32个独立来源；缺少原研究身份核验的条目保留未知。第一阶段快照见 `tables/dataset_inventory_stage1.*`。
 
 本轮统一深入核查10个候选：sciPlex3、Replogle K562、Replogle RPE1、MIX-seq、OP3、Frangieh、sci-Plex G×E、Kang、Norman、Parse。Jiang24、Tahoe、Nadig、VCC完成有来源的扩展筛选，未冒充完成细胞级深审计。
 
@@ -70,13 +73,13 @@ report=f'''# 深入审计报告
 
 [算] 作者Supplementary Table 3有 **4,992个唯一hash样本键、52个plate_oligo、rep1/rep2两个标签、188种药+S0000 vehicle**。两个作者样本表的6个共同字段逐键完全相符，重复键为0。每个plate有96个设计样本、2个vehicle样本；每plate只对应一个cell_type、一个replicate和一个time_point，三个因素均嵌套在plate。
 
-[算] 24h：A549/K562/MCF7各188药×4剂量×2rep。72h：仅A549，47药×4剂量×2rep。编码dose为10/100/1000/10000，vehicle归零；浓度单位没有从数字本身推断，仍需原实验补充材料核验。处理样本 **4,888**，vehicle样本 **104**。严格条件标签含对照共2,448，均覆盖两rep及两plate标签；在设计表单位下，4,888个“留出组×非对照条件”均具有另一组同条件与背景/时间匹配对照。
+[算] 24h：A549/K562/MCF7各188药×4剂量×2rep。72h：仅A549，47药×4剂量×2rep。编码dose为10/100/1000/10000，vehicle归零；原文第2页已目视核实为10/100 nM、1/10 µM。处理样本 **4,888**，vehicle样本 **104**。严格条件标签含对照共2,448，均覆盖两rep及两plate标签；在设计表单位下，4,888个“留出组×非对照条件”均具有另一组同条件与背景/时间匹配对照。
 
 这不意味着每种药覆盖所有plate。不同plate承载不同药物子集，plate与面板部分混杂；只有重叠条件子集适合测试。72h不是三细胞系共享的独立技术batch，它是仅A549的不同生物条件。要保留time和cell_type，不能直接整合成同批次分布。
 
 [算] `valid_cells.tsv`有 **649,340个唯一细胞ID**（18,484,236 bytes）。该文件只有ID，没有细胞到hash/replicate/培养板/处理的映射。这一枚举不是重新验证h5ad矩阵行数，也不能把649,340均分到4,992个样本。完整cell obs仍未取得。因此 **真实batch×perturbation细胞数、每batch对照细胞数、QC后跨batch覆盖、每条件可训练细胞数未计算**。
 
-[推] fixed cell_type/dose/time的replicate留出与配对plate留出很有希望；需要原作者证明rep1/rep2是独立培养/处理，而非同源细胞的技术拆分。若只能证明索引板差异，则任务只能声称相应技术层级泛化。
+[文] 原文第2页明确重复培养板和孔位随机化，第4页Fig.3A明确biological replicate，已支持生物学重复设计。见 {e('E32')}。[推] 固定背景、剂量和时间留出重复很有希望；仍需逐细胞对应及培养日期/lot、索引板、建库、测序关系，不能把52个板当52次独立实验。
 
 [未知] culture_plate与独立培养日期/lot、建库/测序run的映射；每rep/plate过滤后的细胞数；真实批次强度。下一步下载GSM4150378完整cell metadata或请作者导出`colData(cds)`，保留hash与所有索引步骤。无需先下载大表达矩阵。
 
@@ -142,9 +145,9 @@ report=f'''# 深入审计报告
 
 [未知] 相同guide×免疫背景是否跨独立培养/library，NTC逐背景/逐batch数，背景/患者/技术层级嵌套。SCP/Zenodo受阻，未下载全obs。当前作为机制与G×E补充候选，技术批次主任务信息不足。
 
-## 7. sci-Plex G×E（McFaline-Figueroa2023）
+## 7. sci-Plex G×E（McFaline-Figueroa2024；benchmark别名McFaline23）
 
-[二] 原文件GSM7056148 GxE1与GSM7056149 GxE2，benchmark从RDS转h5ad并合并GxE1/A172/T98G/U87MG。这是同研究不同实验与细胞背景，不能冒充多个独立数据源，也不能直接作为技术重复。DOI来自pertpy参考，正式题名尚未从原文核实。见 {e('E19')}、{e('E06')}。
+[二] 原文件GSM7056148 GxE1与GSM7056149 GxE2，benchmark从RDS转h5ad并合并GxE1/A172/T98G/U87MG。这是同研究不同实验与细胞背景，不能冒充多个独立数据源，也不能直接作为技术重复。原文已核实正式题名、GSE225775及作者sci-Plex-GxE仓库；2024-01-25发表，2024-02-14卷期，不能从DOI中的2023推断发表年。见 {e('E33')}。见 {e('E19')}、{e('E06')}。
 
 [二] 元数据含`gene_id,treatment,dose,cell_type`；组合gene_id逗号转+，NTC/random/NA被benchmark转control。NA是否原始对照或未分配guide，必须原文件/设计核实，不根据转换规则把缺失当阴性对照。
 
@@ -152,7 +155,11 @@ report=f'''# 深入审计报告
 
 [推] 遗传×药物条件非常适合检查校正是否删除生物反应；但纯技术batch外推必须在同cell_type/gene/chemical/dose/time内定义。
 
-[未知] GxE1/2共同面板、独立重复、plate/pool/library/run映射、背景内NTC数量。GEO受阻，未下载hash长表；若该长表很大，优先请求作者导出去歧义后的cell-level plate标签及RNA-QC ID，不下载整个RDS来猜批次。当前补充候选。
+[文] kinome screen原文明确两次独立转导、1,052,205细胞；使用4个RT板和4个连接板，部分实验复用hash但不混池，分配不同RT孔。[未知] GxE1/2与这些实验的精确对应、逐细胞转导/plate/pool/library/run映射、背景内NTC数量。GEO受阻，未下载hash长表；若该长表很大，优先请求作者导出去歧义后的cell-level plate标签及RNA-QC ID，不下载整个RDS来猜批次。当前补充候选。
+
+### 新增原文核查：Gasperini2019
+
+[文] STAR Methods明确规模实验32个10x lane在RT后分成两批各16 lane继续建库，提供了实际技术批次定义；差异表达方法明确将`prep_batch`纳入Monocle2回归模型，但不能据此声称预测泛化改善。原文两个at-scale实验共254,974细胞、5,920候选enhancers；2019-01-03发表、01-10卷期。见 {e('E34')}。[未知] 逐细胞lane→两批对应、同guide组合及对照的跨批次数量。因此升级为优先核实建库批次的候选；这不是独立培养重复，也尚不能宣布留批次测试可执行。
 
 ## 8. Kang2018 IFN-β PBMC
 
@@ -210,7 +217,7 @@ Jiang24已确认5个IFNB/IFNG/INS/TGFB/TNFA RDS和benchmark训练使用；`treat
 # Machine-readable availability is deliberately not a fake zero-cell table.
 availability=[]
 for id in ['sciplex3','replogle2022_k562_gwps','replogle2022_rpe1','mcfarland2020','op3_2023','frangieh2021','mcfaline2023','kang2018','norman2019','parse_cytokines']:
- availability.append(dict(dataset_id=id,cell_metadata_status='not_obtained',batch_x_perturbation_cell_counts='not_computed',controls_by_batch_cell_counts='not_computed',strict_cell_condition_coverage='not_computed',batch_context_dose_time_cell_crosstabs='not_computed',design_statistics='computed; sample-level only' if id=='sciplex3' else 'computed; experiment declarations only' if id=='mcfarland2020' else 'source/schema audit only',independent_technical_batch_proven='no',expression_batch_strength='not_evaluated'))
+ availability.append(dict(dataset_id=id,cell_metadata_status='not_obtained',batch_x_perturbation_cell_counts='not_computed',controls_by_batch_cell_counts='not_computed',strict_cell_condition_coverage='not_computed',batch_context_dose_time_cell_crosstabs='not_computed',design_statistics='computed; sample-level only' if id=='sciplex3' else 'computed; experiment declarations only' if id=='mcfarland2020' else 'source/schema audit only',independent_technical_batch_proven='primary paper supports biological replicates / independent transductions; cell mapping pending' if id in {'sciplex3','mcfaline2023'} else 'not established',cell_level_batch_mapping_validated='no',expression_batch_strength='not_evaluated'))
 with (R/'audits/availability.csv').open('w',newline='') as f:
  w=csv.DictWriter(f,list(availability[0]));w.writeheader();w.writerows(availability)
 index=[]
@@ -228,7 +235,7 @@ recommend=[]
 for row in inventory:
  i=row['dataset_id'];tier='优先采用' if i in priority else '可作补充' if i in supplement else '暂不适合' if i in not_primary else '信息不足'
  target='供体内/同背景的技术批次试点（条件性）' if i in priority else '遗传组合参照' if i=='norman2019' else '跨供体/细胞类型/物种生物泛化；不当纯技术batch' if i in {'kang2018','hagai2018','shifrut2018','zhao2021','nadig2024'} else '遗传×刺激/药物及生物保真补充' if i in {'frangieh2021','mcfaline2023','lotfollahi2023_combo','dong2023'} else '当前PC9多时间子集暂不直接作为纯技术batch主任务' if i in not_primary else '扩展筛选/元数据核实后再定'
- gate='完整cell-to-hash/QC映射 + rep1/rep2独立培养证明' if i=='sciplex3' else 'expt1/3共同细胞系、Trametinib24h同剂量及独立运行' if i=='mcfarland2020' else '供体内plate/library重复 + 每板DMSO + 跨板共同药物' if i=='op3_2023' else '核实独立培养/处理/建库映射、跨batch相同条件及匹配阴性对照'
+ gate='完整cell-to-hash/QC映射 + 原文重复与培养/建库/run对应' if i=='sciplex3' else 'expt1/3共同细胞系、Trametinib24h同剂量及独立运行' if i=='mcfarland2020' else '供体内plate/library重复 + 每板DMSO + 跨板共同药物' if i=='op3_2023' else '核实独立培养/处理/建库映射、跨batch相同条件及匹配阴性对照'
  if i=='aissa2021':gate='优先核实是否有同时间未处理对照；其他multirep子研究不能自动继承当前子集'
  recommend.append(dict(dataset_id=i,family_id=row['family_id'],tier=tier,task_fit=target,reason=row['screening_reason'],adoption_gate=gate,technical_batch_task_ready='未证实',source_urls=row['source_urls']))
 with (R/'tables/recommendations.csv').open('w',newline='') as f:
@@ -243,7 +250,7 @@ text='''# 推荐清单
 
 |候选|研究适用性|已获证据|采用门槛|
 |---|---|---|---|
-|sciPlex3|可固定背景/剂量/时间、比较重复及板层级，并研究生物效应保真|188药、两rep、52板、每板2 vehicle设计样本；严格条件跨两组|完整cell-to-hash映射与QC细胞数；证明rep标签代表独立培养/处理；不要把不同时间当batch|
+|sciPlex3|可固定背景/剂量/时间、比较重复及板层级，并研究生物效应保真|188药、两rep、52板、每板2 vehicle设计样本；严格条件跨两组|完整cell-to-hash映射与QC细胞数；将rep标签与原文生物学重复及下游建库/run对应；不要把不同时间当batch|
 |MIX-seq|同药跨实验有真实作者对照映射，可检验有限条件的外部实验泛化|Trametinib24h在expt1/expt3，两个实验均有DMSO设计|共同细胞系、同剂量、培养/pool/库映射；实验差异若含生物背景，另设背景泛化任务|
 |OP3 PBMC|官方schema有plate、well、donor、dose、time，可同时检验技术与生物因素|144 compounds/24h/3 donors；DMSO与positive controls分开|完整obs；供体内跨plate共同药物与DMSO；plate/library不能被donor完全代替|
 
@@ -263,7 +270,7 @@ Norman2019适合作遗传组合预测参照；GSE206741 CPA组合药物、sci-Pl
 
 ## 信息不足
 
-Replogle2022 K562 GWPS/essential、RPE1仍保留为重点遗传候选，但gem_group重命名不能解决独立批次定义。Tahoe有独立Parquet和重复sample定义、被State实际采用，值得获取小metadata后升级；当前版本/访问与层级关系未解决。Parse刺激覆盖丰富、State训练证据明确，但正式card/技术重复未核实。Jiang24的遗传×五刺激有benchmark使用证据，原论文、counts及技术层级仍缺。Adamson、Dixit、Gasperini、Xie、sciPlex4需要验证面板、MOI、时间、背景与batch重叠；不能因未找到记录认定没有批次效应。
+Replogle2022 K562 GWPS/essential、RPE1仍保留为重点遗传候选，但gem_group重命名不能解决独立批次定义。Tahoe有独立Parquet和重复sample定义、被State实际采用，值得获取小metadata后升级；当前版本/访问与层级关系未解决。Parse刺激覆盖丰富、State训练证据明确，但正式card/技术重复未核实。Jiang24的遗传×五刺激有benchmark使用证据，原论文、counts及技术层级仍缺。Gasperini原文已找到32 lane在RT后分两批的建库设计，优先取得lane→批次及细胞映射；仍属信息不足是因为实际共同条件/对照数未核实。Adamson、Dixit、Xie、sciPlex4需要验证面板、MOI、时间、背景与batch重叠；不能因未找到记录认定没有批次效应。
 
 ## 采用前的研究决策
 
@@ -298,7 +305,7 @@ Replogle2022 K562 GWPS/essential、RPE1仍保留为重点遗传候选，但gem_g
 
 |优先级/对象|需要的文件或说明|核实问题|无需大矩阵的首选路径|
 |---|---|---|---|
-|P1 sciPlex3|GSM4150378 `colData(cds)`/cell metadata，含cell/hash/culture_plate/replicate/RT/ligation/PCR及QC|rep1/2是否独立培养？index plates是否嵌套或跨培养plate？测序run如何映射？|GEO单独cellMetadata文件；作者导出obs；若只提供RDS，先HEAD记录大小，再请求小导出|
+|P1 sciPlex3|GSM4150378 `colData(cds)`/cell metadata，含cell/hash/culture_plate/replicate/RT/ligation/PCR及QC|原文已支持生物学重复；rep1/2如何映射培养日期/lot？index plates是否嵌套或跨培养plate？测序run如何映射？|GEO单独cellMetadata文件；作者导出obs；若只提供RDS，先HEAD记录大小，再请求小导出|
 |P1 MIX-seq|Figshare10298696 file listing、每实验cell_info/metadata及sample设计|expt1/3共有细胞系、Trametinib24h剂量与培养pool是否相同？每库对照？|API文件列表后只下载cell metadata；Taiga内部凭据不是公开获取前提|
 |P1 OP3|GSE279945完整scRNA obs、plate/well/pool/library/run设计表|供体内同药是否跨plate重复？每plate DMSO？positive controls是否和药物一起保留？|全obs导出，不以de_train.uns[single_cell_obs]训练子集替代整个实验|
 |P1 Replogle K562/RPE1|各原raw_singlecell文件obs、gem_group→culture/sample/library/run映射|同gene和同guide跨GEM覆盖；GEM独立培养还是同pool拆库？essential day6/7到底是什么？|GWPS官方metadata或作者obs导出；分开GWPS/essential/RPE1|
