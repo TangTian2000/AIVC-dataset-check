@@ -2,9 +2,11 @@
 
 日期：2026-10-11。当前瓶颈是资料访问与实验设计证据，不是计算资源。暂时不需要GPU，也不需要下载大表达矩阵。
 
-## 1. 恢复GitHub写入连接
+## 1. 查看GitHub成果分支
 
-本轮云环境的GitHub CLI报告其现有凭据无效。若独立分支推送也失败，请在Codex的GitHub连接或应用授权设置中重新授权 `TangTian2000/AIVC-dataset-check` 的写入权限，再继续本任务。不要把访问令牌贴到聊天或提交到仓库。具体推送结果以本轮回复为准；本页不会把本地提交当作GitHub发布成功。
+成果已推送到 [research/perturbation-dataset-audit-20261011](https://github.com/TangTian2000/AIVC-dataset-check/tree/research/perturbation-dataset-audit-20261011)，查看 [成果入口](https://github.com/TangTian2000/AIVC-dataset-check/blob/research/perturbation-dataset-audit-20261011/research/README.md) 即可。默认main尚未合并，所以仓库默认首页仍会显示旧内容。你可以先审阅报告；如希望默认分支也显示成果，再通过 [分支比较](https://github.com/TangTian2000/AIVC-dataset-check/compare/main...research/perturbation-dataset-audit-20261011) 创建并合并PR。
+
+本轮Git推送成功，无需为查看成果重新授权。GitHub CLI单独报告凭据无效，但没有阻碍分支发布；如之后需要用CLI管理PR，再处理该连接问题。不要把访问令牌贴到聊天或提交到仓库。
 
 ## 2. 允许访问官方文献与数据域名
 
