@@ -4,6 +4,7 @@
 
 - [数据集总表](tables/dataset_inventory.md)：32个版本/子资源条目，28个候选研究/资源家族；完整字段见 [CSV](tables/dataset_inventory.csv) 或 [JSON](tables/dataset_inventory.json)。同源子集不当独立来源，预测采用与仅整合资源收录分开。
 - [深入审计报告](audits/deep_audit.md)：统一核查10个候选；包含层级、混杂、对照、跨批次可行性与证据链接。
+- [已取得信息、具体发现与缺口对照表](audit_progress_summary.md)：覆盖全部32条，并解释“完整设计”和“跨批次覆盖”。
 - [分级推荐](recommendations.md)：优先采用、可作补充、暂不适合、信息不足；优先类均为条件性建议，未证明可直接开展技术batch留出。
 - [真实计算与未完成状态](audits/availability.csv)：设计表已计算；细胞数量跨表未计算。
 - [下载的元数据和用法](metadata/README.md)、[设计热图PNG](figures/sciplex3_sample_design.png) / [PDF](figures/sciplex3_sample_design.pdf)：图与统计都是设计样本，不是细胞/表达批次效应。

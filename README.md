@@ -7,6 +7,7 @@
 - [成果总入口](research/README.md)
 - [数据集总表](research/tables/dataset_inventory.md) / [完整CSV](research/tables/dataset_inventory.csv)
 - [深入审计报告](research/audits/deep_audit.md)
+- [已取得信息、具体发现与缺口对照表](research/audit_progress_summary.md)
 - [分级推荐](research/recommendations.md)
 - [元数据与复现说明](research/metadata/README.md)
 - [未解决问题](research/open_questions.md)
