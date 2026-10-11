@@ -1,0 +1,7 @@
+replicate,cell_type,n_design_samples
+rep1,A549,960
+rep1,K562,768
+rep1,MCF7,768
+rep2,A549,960
+rep2,K562,768
+rep2,MCF7,768

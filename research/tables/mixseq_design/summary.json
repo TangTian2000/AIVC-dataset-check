@@ -1,0 +1,32 @@
+{
+  "declared_datasets": 30,
+  "expt_batches": [
+    "expt1",
+    "expt10",
+    "expt2",
+    "expt3",
+    "expt5"
+  ],
+  "treatment_labels": [
+    "AZD5591",
+    "Afatinib",
+    "BRD3379",
+    "Bortezomib",
+    "DMSO",
+    "Dabrafenib",
+    "Everolimus",
+    "Gemcitabine",
+    "Idasanutlin",
+    "JQ1",
+    "Navitoclax",
+    "Prexasertib",
+    "Taselisib",
+    "Trametinib",
+    "Untreated",
+    "sgGPX4",
+    "sgLACZ",
+    "sgOR2J2"
+  ],
+  "comparisons": 20,
+  "note": "Author-coded experimental declarations only. expt_batch includes changed pools/protocols; independence and per-cell context coverage not established."
+}

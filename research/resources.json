@@ -1,0 +1,793 @@
+[
+  {
+    "id": "pertpy__datasets_py",
+    "url": "https://raw.githubusercontent.com/scverse/pertpy/a4c30738468f8cb6bed677efb9331a9e35a168bd/src/pertpy/data/_datasets.py",
+    "path": "sources/pertpy__datasets.py",
+    "kind": "sources",
+    "source_repo": "scverse/pertpy",
+    "source_commit": "a4c30738468f8cb6bed677efb9331a9e35a168bd",
+    "source_path": "src/pertpy/data/_datasets.py",
+    "sha256": "da427d53c40111e685b2090a78dc4c090e0eaeda1938e8963d4a4056be7695e6"
+  },
+  {
+    "id": "gears_README_md",
+    "url": "https://raw.githubusercontent.com/snap-stanford/GEARS/f374e43e197b295016d80395d7a54ddb81cc6769/README.md",
+    "path": "sources/gears_README.md",
+    "kind": "sources",
+    "source_repo": "snap-stanford/GEARS",
+    "source_commit": "f374e43e197b295016d80395d7a54ddb81cc6769",
+    "source_path": "README.md",
+    "sha256": "fe78b7b1ede50c673b8f0d91fb2637707685c78b269ee157edb6cbc4d510d61b"
+  },
+  {
+    "id": "gears_pertdata_py",
+    "url": "https://raw.githubusercontent.com/snap-stanford/GEARS/f374e43e197b295016d80395d7a54ddb81cc6769/gears/pertdata.py",
+    "path": "sources/gears_pertdata.py",
+    "kind": "sources",
+    "source_repo": "snap-stanford/GEARS",
+    "source_commit": "f374e43e197b295016d80395d7a54ddb81cc6769",
+    "source_path": "gears/pertdata.py",
+    "sha256": "7b7f849808947bd148e5e96db22d56cfb083913ed547be0817cbf798930d410b"
+  },
+  {
+    "id": "cpa_README_md",
+    "url": "https://raw.githubusercontent.com/theislab/cpa/fbd7c0250edc23eff003a10c99655579c53afd63/README.md",
+    "path": "sources/cpa_README.md",
+    "kind": "sources",
+    "source_repo": "theislab/cpa",
+    "source_commit": "fbd7c0250edc23eff003a10c99655579c53afd63",
+    "source_path": "README.md",
+    "sha256": "8d4b8bf455ab08d365b8c967924d7250576c73724c8b1656a7463a4f990f4514"
+  },
+  {
+    "id": "cpa_Kang_ipynb",
+    "url": "https://raw.githubusercontent.com/theislab/cpa/fbd7c0250edc23eff003a10c99655579c53afd63/docs/tutorials/Kang.ipynb",
+    "path": "sources/cpa_Kang.ipynb",
+    "kind": "sources",
+    "source_repo": "theislab/cpa",
+    "source_commit": "fbd7c0250edc23eff003a10c99655579c53afd63",
+    "source_path": "docs/tutorials/Kang.ipynb",
+    "sha256": "ba2af4fddeb149ae5705f9f517b21492e784726a59a9bb7ca6eb879cc9c366c5"
+  },
+  {
+    "id": "cpa_Norman_ipynb",
+    "url": "https://raw.githubusercontent.com/theislab/cpa/fbd7c0250edc23eff003a10c99655579c53afd63/docs/tutorials/Norman.ipynb",
+    "path": "sources/cpa_Norman.ipynb",
+    "kind": "sources",
+    "source_repo": "theislab/cpa",
+    "source_commit": "fbd7c0250edc23eff003a10c99655579c53afd63",
+    "source_path": "docs/tutorials/Norman.ipynb",
+    "sha256": "0e194b6413616c0de2978bdc92edf0d0fdfccd7bdc3c66da250468888b41294e"
+  },
+  {
+    "id": "cpa_combosciplex_ipynb",
+    "url": "https://raw.githubusercontent.com/theislab/cpa/fbd7c0250edc23eff003a10c99655579c53afd63/docs/tutorials/combosciplex.ipynb",
+    "path": "sources/cpa_combosciplex.ipynb",
+    "kind": "sources",
+    "source_repo": "theislab/cpa",
+    "source_commit": "fbd7c0250edc23eff003a10c99655579c53afd63",
+    "source_path": "docs/tutorials/combosciplex.ipynb",
+    "sha256": "8d918e8ef86533859505caf95684652bbd481c1c28ba2b41202d8197023b5ee7"
+  },
+  {
+    "id": "scplex_README_md",
+    "url": "https://raw.githubusercontent.com/cole-trapnell-lab/sci-plex/079639c50811dd43a206a779ab2f0199a147c98f/README.md",
+    "path": "sources/scplex_README.md",
+    "kind": "sources",
+    "source_repo": "cole-trapnell-lab/sci-plex",
+    "source_commit": "079639c50811dd43a206a779ab2f0199a147c98f",
+    "source_path": "README.md",
+    "sha256": "09b314162f6fd87c9dc7737ce2000a212b49d60f2b97aafd0a202b47efa9a18e"
+  },
+  {
+    "id": "scplex_Notebook1_preprocess_data_R",
+    "url": "https://raw.githubusercontent.com/cole-trapnell-lab/sci-plex/079639c50811dd43a206a779ab2f0199a147c98f/large_screen/Notebook1_preprocess_data.R",
+    "path": "sources/scplex_Notebook1_preprocess_data.R",
+    "kind": "sources",
+    "source_repo": "cole-trapnell-lab/sci-plex",
+    "source_commit": "079639c50811dd43a206a779ab2f0199a147c98f",
+    "source_path": "large_screen/Notebook1_preprocess_data.R",
+    "sha256": "b9f845170b6f345060c0540bbd5956dc6f87be5919ed44bf675d136432eee3c0"
+  },
+  {
+    "id": "scplex_Notebook2_summarize_hashes_R",
+    "url": "https://raw.githubusercontent.com/cole-trapnell-lab/sci-plex/079639c50811dd43a206a779ab2f0199a147c98f/large_screen/Notebook2_summarize_hashes.R",
+    "path": "sources/scplex_Notebook2_summarize_hashes.R",
+    "kind": "sources",
+    "source_repo": "cole-trapnell-lab/sci-plex",
+    "source_commit": "079639c50811dd43a206a779ab2f0199a147c98f",
+    "source_path": "large_screen/Notebook2_summarize_hashes.R",
+    "sha256": "597883468f72b62ba2168c36515723436bf9ebef216bd8d26ffc57cc32842ae6"
+  },
+  {
+    "id": "scplex_Notebook3_preprocess_data_R",
+    "url": "https://raw.githubusercontent.com/cole-trapnell-lab/sci-plex/079639c50811dd43a206a779ab2f0199a147c98f/large_screen/Notebook3_preprocess_data.R",
+    "path": "sources/scplex_Notebook3_preprocess_data.R",
+    "kind": "sources",
+    "source_repo": "cole-trapnell-lab/sci-plex",
+    "source_commit": "079639c50811dd43a206a779ab2f0199a147c98f",
+    "source_path": "large_screen/Notebook3_preprocess_data.R",
+    "sha256": "0692810ca129ff30769de648a4ab7676e485c3fae8f4a64f36d903460506fc36"
+  },
+  {
+    "id": "scplex_Notebook17_Replicability_DEG_test_R",
+    "url": "https://raw.githubusercontent.com/cole-trapnell-lab/sci-plex/079639c50811dd43a206a779ab2f0199a147c98f/large_screen/Notebook17_Replicability_DEG_test.R",
+    "path": "sources/scplex_Notebook17_Replicability_DEG_test.R",
+    "kind": "sources",
+    "source_repo": "cole-trapnell-lab/sci-plex",
+    "source_commit": "079639c50811dd43a206a779ab2f0199a147c98f",
+    "source_path": "large_screen/Notebook17_Replicability_DEG_test.R",
+    "sha256": "ff80335f590210d3f5676c134aafbd19eb3b273d6e069c799798b45d8c81fb60"
+  },
+  {
+    "id": "scplex_Supplementary_Table_3_txt",
+    "url": "https://raw.githubusercontent.com/cole-trapnell-lab/sci-plex/079639c50811dd43a206a779ab2f0199a147c98f/large_screen/bin/Supplementary_Table_3.txt",
+    "path": "metadata/scplex_Supplementary_Table_3.txt",
+    "kind": "metadata",
+    "source_repo": "cole-trapnell-lab/sci-plex",
+    "source_commit": "079639c50811dd43a206a779ab2f0199a147c98f",
+    "source_path": "large_screen/bin/Supplementary_Table_3.txt",
+    "sha256": "dddd94490c3c24b1e8d115dc191c2848ff3dcccace76a93983351e4c41d29aee"
+  },
+  {
+    "id": "scplex_sciChem3_screen2_hashMeta_data_tsv",
+    "url": "https://raw.githubusercontent.com/cole-trapnell-lab/sci-plex/079639c50811dd43a206a779ab2f0199a147c98f/large_screen/bin/sciChem3_screen2_hashMeta_data.tsv",
+    "path": "metadata/scplex_sciChem3_screen2_hashMeta_data.tsv",
+    "kind": "metadata",
+    "source_repo": "cole-trapnell-lab/sci-plex",
+    "source_commit": "079639c50811dd43a206a779ab2f0199a147c98f",
+    "source_path": "large_screen/bin/sciChem3_screen2_hashMeta_data.tsv",
+    "sha256": "b5829c78ed50222e4543e09340c357397b788ab431bddfc0ca294b7d88b1b4ae"
+  },
+  {
+    "id": "scplex_valid_cells_tsv",
+    "url": "https://raw.githubusercontent.com/cole-trapnell-lab/sci-plex/079639c50811dd43a206a779ab2f0199a147c98f/large_screen/bin/valid_cells.tsv",
+    "path": "metadata/scplex_valid_cells.tsv",
+    "kind": "metadata",
+    "source_repo": "cole-trapnell-lab/sci-plex",
+    "source_commit": "079639c50811dd43a206a779ab2f0199a147c98f",
+    "source_path": "large_screen/bin/valid_cells.tsv",
+    "sha256": "fd3735ab48d976d09f35bb510023e1ca9cd391e6f5dfa2bd04e078e66b3c1e9c"
+  },
+  {
+    "id": "scplex_hashSampleSheet_txt",
+    "url": "https://raw.githubusercontent.com/cole-trapnell-lab/sci-plex/079639c50811dd43a206a779ab2f0199a147c98f/small_screen/hashSampleSheet.txt",
+    "path": "metadata/scplex_hashSampleSheet.txt",
+    "kind": "metadata",
+    "source_repo": "cole-trapnell-lab/sci-plex",
+    "source_commit": "079639c50811dd43a206a779ab2f0199a147c98f",
+    "source_path": "small_screen/hashSampleSheet.txt",
+    "sha256": "eef6facac4df64a8192179f319fb78173402ebca9b7b11274ac34d4a66a5fd9c"
+  },
+  {
+    "id": "cellot_README_md",
+    "url": "https://raw.githubusercontent.com/bunnech/cellot/522d2b953da8ad244fcf36f64521487fdf763788/README.md",
+    "path": "sources/cellot_README.md",
+    "kind": "sources",
+    "source_repo": "bunnech/cellot",
+    "source_commit": "522d2b953da8ad244fcf36f64521487fdf763788",
+    "source_path": "README.md",
+    "sha256": "bf4f0c674cee33042d9a842d589e4639e54e2e347f42b74e20597569dd73944a"
+  },
+  {
+    "id": "cellot_crossspecies_yaml",
+    "url": "https://raw.githubusercontent.com/bunnech/cellot/522d2b953da8ad244fcf36f64521487fdf763788/configs/tasks/crossspecies.yaml",
+    "path": "sources/cellot_crossspecies.yaml",
+    "kind": "sources",
+    "source_repo": "bunnech/cellot",
+    "source_commit": "522d2b953da8ad244fcf36f64521487fdf763788",
+    "source_path": "configs/tasks/crossspecies.yaml",
+    "sha256": "b2603455e4053d839fe41f314f2c3bce9cf159629599b7bbc0e7ddba0140151a"
+  },
+  {
+    "id": "cellot_gbm_yaml",
+    "url": "https://raw.githubusercontent.com/bunnech/cellot/522d2b953da8ad244fcf36f64521487fdf763788/configs/tasks/gbm.yaml",
+    "path": "sources/cellot_gbm.yaml",
+    "kind": "sources",
+    "source_repo": "bunnech/cellot",
+    "source_commit": "522d2b953da8ad244fcf36f64521487fdf763788",
+    "source_path": "configs/tasks/gbm.yaml",
+    "sha256": "f6bcb9dca11738cd141ebf991a2c405f0d29e47e9f13829dd6336318530f4383"
+  },
+  {
+    "id": "cellot_lupuspatients_yaml",
+    "url": "https://raw.githubusercontent.com/bunnech/cellot/522d2b953da8ad244fcf36f64521487fdf763788/configs/tasks/lupuspatients.yaml",
+    "path": "sources/cellot_lupuspatients.yaml",
+    "kind": "sources",
+    "source_repo": "bunnech/cellot",
+    "source_commit": "522d2b953da8ad244fcf36f64521487fdf763788",
+    "source_path": "configs/tasks/lupuspatients.yaml",
+    "sha256": "d0c21953af95fe3f1209ce5ad0456f1307b0ee66cc956b62c97f625fce6d30e5"
+  },
+  {
+    "id": "cellot_sciplex3_yaml",
+    "url": "https://raw.githubusercontent.com/bunnech/cellot/522d2b953da8ad244fcf36f64521487fdf763788/configs/tasks/sciplex3.yaml",
+    "path": "sources/cellot_sciplex3.yaml",
+    "kind": "sources",
+    "source_repo": "bunnech/cellot",
+    "source_commit": "522d2b953da8ad244fcf36f64521487fdf763788",
+    "source_path": "configs/tasks/sciplex3.yaml",
+    "sha256": "94768a373f2b38e2f22f916b1eaed63883f25e28a50fe2db0790efddba450c2e"
+  },
+  {
+    "id": "cellot_statefate_yaml",
+    "url": "https://raw.githubusercontent.com/bunnech/cellot/522d2b953da8ad244fcf36f64521487fdf763788/configs/tasks/statefate.yaml",
+    "path": "sources/cellot_statefate.yaml",
+    "kind": "sources",
+    "source_repo": "bunnech/cellot",
+    "source_commit": "522d2b953da8ad244fcf36f64521487fdf763788",
+    "source_path": "configs/tasks/statefate.yaml",
+    "sha256": "2c90e076669d84e26de64f4d68598688749fde3613c6108481aabcd788e3dc6f"
+  },
+  {
+    "id": "perturbench_README_md",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/README.md",
+    "path": "sources/perturbench_README.md",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "README.md",
+    "sha256": "4aa29fa1d4333a72013fd2c60545218f0015b85b95b76878cbdb88962ff4e55d"
+  },
+  {
+    "id": "perturbench_frangieh21_py",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/data/accessors/frangieh21.py",
+    "path": "sources/perturbench_frangieh21.py",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/data/accessors/frangieh21.py",
+    "sha256": "cf7b2c2324416154a705235c2405bab3c60d35a518a30bb223b49850ba86254f"
+  },
+  {
+    "id": "perturbench_jiang24_py",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/data/accessors/jiang24.py",
+    "path": "sources/perturbench_jiang24.py",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/data/accessors/jiang24.py",
+    "sha256": "2bc7b765fd500b4379374a1730b162e5f69a63dbdd32d5604877c69a4ce970b1"
+  },
+  {
+    "id": "perturbench_mcfaline23_py",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/data/accessors/mcfaline23.py",
+    "path": "sources/perturbench_mcfaline23.py",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/data/accessors/mcfaline23.py",
+    "sha256": "83cf43bc3594d9365377ca19c4c6ee5de4ba7eb74694b59c02b5918629e964db"
+  },
+  {
+    "id": "perturbench_op3_py",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/data/accessors/op3.py",
+    "path": "sources/perturbench_op3.py",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/data/accessors/op3.py",
+    "sha256": "7229283046556bab5bf560d55459f0d0b7f1b56382c9b11437f822c33bbf8c02"
+  },
+  {
+    "id": "perturbench_srivatsan20_py",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/data/accessors/srivatsan20.py",
+    "path": "sources/perturbench_srivatsan20.py",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/data/accessors/srivatsan20.py",
+    "sha256": "434164adce328fe86ffe866b4d84f8d96a3c21fbf90a6799b1d16bb1157b945f"
+  },
+  {
+    "id": "perturbench_norman19_py",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/src/perturbench/data/accessors/norman19.py",
+    "path": "sources/perturbench_norman19.py",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "src/perturbench/data/accessors/norman19.py",
+    "sha256": "97603f466cbc7c3abba23496bec836338ebbbd21ebea2744a930f0f93eeb0567"
+  },
+  {
+    "id": "perturbench_curate_Frangieh21_ipynb",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/notebooks/neurips2025/data_curation/curate_Frangieh21.ipynb",
+    "path": "sources/perturbench_curate_Frangieh21.ipynb",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "notebooks/neurips2025/data_curation/curate_Frangieh21.ipynb",
+    "sha256": "b4f8970f65b94a23d034423d125407e1881c3f6da0fd1377babf6951919ec0d1"
+  },
+  {
+    "id": "perturbench_curate_Jiang24_step1_R",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/notebooks/neurips2025/data_curation/curate_Jiang24_step1.R",
+    "path": "sources/perturbench_curate_Jiang24_step1.R",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "notebooks/neurips2025/data_curation/curate_Jiang24_step1.R",
+    "sha256": "5fbdc005b75d287b5d8808e576d513bbb2dadc1b2a9a468fc13df378ff5abd23"
+  },
+  {
+    "id": "perturbench_curate_Jiang24_step2_ipynb",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/notebooks/neurips2025/data_curation/curate_Jiang24_step2.ipynb",
+    "path": "sources/perturbench_curate_Jiang24_step2.ipynb",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "notebooks/neurips2025/data_curation/curate_Jiang24_step2.ipynb",
+    "sha256": "cd20583b8db23bd66528030f6cbcd2dd7649e7a95c1dca29087f7b7126cd2930"
+  },
+  {
+    "id": "perturbench_curate_McFalineFigueroa23_step1_R",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/notebooks/neurips2025/data_curation/curate_McFalineFigueroa23_step1.R",
+    "path": "sources/perturbench_curate_McFalineFigueroa23_step1.R",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "notebooks/neurips2025/data_curation/curate_McFalineFigueroa23_step1.R",
+    "sha256": "136d1fed2d8777c262e4300a2cdef2975ab0df071955043a18c1096fc247dd30"
+  },
+  {
+    "id": "perturbench_curate_McFalineFigueroa23_step2_ipynb",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/notebooks/neurips2025/data_curation/curate_McFalineFigueroa23_step2.ipynb",
+    "path": "sources/perturbench_curate_McFalineFigueroa23_step2.ipynb",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "notebooks/neurips2025/data_curation/curate_McFalineFigueroa23_step2.ipynb",
+    "sha256": "f6abea4a64d9aba14af7534598899bc094259f7176e263e220253f1cd27a15e0"
+  },
+  {
+    "id": "perturbench_curate_op3_ipynb",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/notebooks/neurips2025/data_curation/curate_op3.ipynb",
+    "path": "sources/perturbench_curate_op3.ipynb",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "notebooks/neurips2025/data_curation/curate_op3.ipynb",
+    "sha256": "50d9ba92f3cf4f570a7a8df4e1a6a38efba2baa8ca4e2903a549e5c83ae954af"
+  },
+  {
+    "id": "perturbench_curate_Srivatsan20_ipynb",
+    "url": "https://raw.githubusercontent.com/altoslabs/perturbench/c84038bc1ea409aa54f3832cfa6f34f5059adf0c/notebooks/neurips2025/data_curation/curate_Srivatsan20.ipynb",
+    "path": "sources/perturbench_curate_Srivatsan20.ipynb",
+    "kind": "sources",
+    "source_repo": "altoslabs/perturbench",
+    "source_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "source_path": "notebooks/neurips2025/data_curation/curate_Srivatsan20.ipynb",
+    "sha256": "6adf946671cd5a089d41e20abdbcf7bd2ee410ca9891529ea42b0781641b7d91"
+  },
+  {
+    "id": "scperturb_README_md",
+    "url": "https://raw.githubusercontent.com/sanderlab/scPerturb/b69f72a070a92bcbaf41e7f9897b11598109ab48/README.md",
+    "path": "sources/scperturb_README.md",
+    "kind": "catalog_or_processing",
+    "source_repo": "sanderlab/scPerturb",
+    "source_commit": "b69f72a070a92bcbaf41e7f9897b11598109ab48",
+    "source_path": "README.md",
+    "sha256": "24031469c70f41d540502026cd0e847accd3cee35eff367e3a0ed692f3b3a7e0"
+  },
+  {
+    "id": "scperturb_scperturb_dataset_info_140922_csv",
+    "url": "https://raw.githubusercontent.com/sanderlab/scPerturb/b69f72a070a92bcbaf41e7f9897b11598109ab48/metadata/scperturb_dataset_info_140922.csv",
+    "path": "sources/scperturb_scperturb_dataset_info_140922.csv",
+    "kind": "catalog_or_processing",
+    "source_repo": "sanderlab/scPerturb",
+    "source_commit": "b69f72a070a92bcbaf41e7f9897b11598109ab48",
+    "source_path": "metadata/scperturb_dataset_info_140922.csv",
+    "sha256": "6fdc049b2a57734671f5fb73aefd6208c74bda42ab775eb01ebb248477a7249d"
+  },
+  {
+    "id": "scperturb_scperturb_dataset_info_xlsx",
+    "url": "https://raw.githubusercontent.com/sanderlab/scPerturb/b69f72a070a92bcbaf41e7f9897b11598109ab48/metadata/scperturb_dataset_info.xlsx",
+    "path": "sources/scperturb_scperturb_dataset_info.xlsx",
+    "kind": "catalog_or_processing",
+    "source_repo": "sanderlab/scPerturb",
+    "source_commit": "b69f72a070a92bcbaf41e7f9897b11598109ab48",
+    "source_path": "metadata/scperturb_dataset_info.xlsx",
+    "sha256": "2b313dfdf471da13d7c92a2d1c1a1f4d4265abca20e28fda0c21e827dac69b16"
+  },
+  {
+    "id": "scperturb_index_html",
+    "url": "https://raw.githubusercontent.com/sanderlab/scPerturb/b69f72a070a92bcbaf41e7f9897b11598109ab48/website/index.html",
+    "path": "sources/scperturb_index.html",
+    "kind": "catalog_or_processing",
+    "source_repo": "sanderlab/scPerturb",
+    "source_commit": "b69f72a070a92bcbaf41e7f9897b11598109ab48",
+    "source_path": "website/index.html",
+    "sha256": "255909e86ed08b71640bb6f6864a397b62a62e64be98dbbeecf7739a7fea1838"
+  },
+  {
+    "id": "scperturb_replogle_handling_ipynb",
+    "url": "https://raw.githubusercontent.com/sanderlab/scPerturb/b69f72a070a92bcbaf41e7f9897b11598109ab48/revision/notebooks/replogle_handling.ipynb",
+    "path": "sources/scperturb_replogle_handling.ipynb",
+    "kind": "catalog_or_processing",
+    "source_repo": "sanderlab/scPerturb",
+    "source_commit": "b69f72a070a92bcbaf41e7f9897b11598109ab48",
+    "source_path": "revision/notebooks/replogle_handling.ipynb",
+    "sha256": "927e14e24ca7ee902d2c62149f3928ecaa2ac2809eb7703f7dbad3e93c580520"
+  },
+  {
+    "id": "scperturb_ReplogleWeissman2022_py",
+    "url": "https://raw.githubusercontent.com/sanderlab/scPerturb/b69f72a070a92bcbaf41e7f9897b11598109ab48/dataset_processing/scripts/ReplogleWeissman2022.py",
+    "path": "sources/scperturb_ReplogleWeissman2022.py",
+    "kind": "catalog_or_processing",
+    "source_repo": "sanderlab/scPerturb",
+    "source_commit": "b69f72a070a92bcbaf41e7f9897b11598109ab48",
+    "source_path": "dataset_processing/scripts/ReplogleWeissman2022.py",
+    "sha256": "2e1402faa001b3d9c4cb265954c416978333b4b72988aedae208433e43acf8af"
+  },
+  {
+    "id": "scperturb_AdamsonWeissman2016_py",
+    "url": "https://raw.githubusercontent.com/sanderlab/scPerturb/b69f72a070a92bcbaf41e7f9897b11598109ab48/dataset_processing/scripts/AdamsonWeissman2016.py",
+    "path": "sources/scperturb_AdamsonWeissman2016.py",
+    "kind": "catalog_or_processing",
+    "source_repo": "sanderlab/scPerturb",
+    "source_commit": "b69f72a070a92bcbaf41e7f9897b11598109ab48",
+    "source_path": "dataset_processing/scripts/AdamsonWeissman2016.py",
+    "sha256": "c2f370ec7f8f6bf22836d29ebbf82ceed0e8308460cbfbdee0f1d1b27af3bbcb"
+  },
+  {
+    "id": "scperturb_ZhaoSims2021_py",
+    "url": "https://raw.githubusercontent.com/sanderlab/scPerturb/b69f72a070a92bcbaf41e7f9897b11598109ab48/dataset_processing/scripts/ZhaoSims2021.py",
+    "path": "sources/scperturb_ZhaoSims2021.py",
+    "kind": "catalog_or_processing",
+    "source_repo": "sanderlab/scPerturb",
+    "source_commit": "b69f72a070a92bcbaf41e7f9897b11598109ab48",
+    "source_path": "dataset_processing/scripts/ZhaoSims2021.py",
+    "sha256": "ec3727dd869a2d07264f7df4d5606af8a5f81499a8b67966431d1773259b9d1d"
+  },
+  {
+    "id": "scperturb_SrivatsanTrapnell2020_py",
+    "url": "https://raw.githubusercontent.com/sanderlab/scPerturb/b69f72a070a92bcbaf41e7f9897b11598109ab48/dataset_processing/scripts/SrivatsanTrapnell2020.py",
+    "path": "sources/scperturb_SrivatsanTrapnell2020.py",
+    "kind": "catalog_or_processing",
+    "source_repo": "sanderlab/scPerturb",
+    "source_commit": "b69f72a070a92bcbaf41e7f9897b11598109ab48",
+    "source_path": "dataset_processing/scripts/SrivatsanTrapnell2020.py",
+    "sha256": "1d216f8f09a758682f7635a7509a3c359842a17925995424b1041a80cd2fe386"
+  },
+  {
+    "id": "scperturb_McFalineTrapnell2023_ipynb",
+    "url": "https://raw.githubusercontent.com/sanderlab/scPerturb/b69f72a070a92bcbaf41e7f9897b11598109ab48/dataset_processing/notebooks/McFalineTrapnell2023.ipynb",
+    "path": "sources/scperturb_McFalineTrapnell2023.ipynb",
+    "kind": "catalog_or_processing",
+    "source_repo": "sanderlab/scPerturb",
+    "source_commit": "b69f72a070a92bcbaf41e7f9897b11598109ab48",
+    "source_path": "dataset_processing/notebooks/McFalineTrapnell2023.ipynb",
+    "sha256": "504bf2fc4bc9bcbdef32aa6e372f3b977bf6735f380aed846efadd0d84b33a89"
+  },
+  {
+    "id": "scperturb_LotfollahiTheis2023_ipynb",
+    "url": "https://raw.githubusercontent.com/sanderlab/scPerturb/b69f72a070a92bcbaf41e7f9897b11598109ab48/dataset_processing/notebooks/LotfollahiTheis2023.ipynb",
+    "path": "sources/scperturb_LotfollahiTheis2023.ipynb",
+    "kind": "catalog_or_processing",
+    "source_repo": "sanderlab/scPerturb",
+    "source_commit": "b69f72a070a92bcbaf41e7f9897b11598109ab48",
+    "source_path": "dataset_processing/notebooks/LotfollahiTheis2023.ipynb",
+    "sha256": "4b3a498ed45310ef7a9b8967a95c9a52542b7829cd0ee2ba32e91fbcaf9f4cff"
+  },
+  {
+    "id": "mixseq_README_md",
+    "url": "https://raw.githubusercontent.com/broadinstitute/mix_seq_ms/edcf2266fc8fd586a4d9ee2db027d142f8a27ba6/README.md",
+    "path": "sources/mixseq_README.md",
+    "kind": "sources",
+    "source_repo": "broadinstitute/mix_seq_ms",
+    "source_commit": "edcf2266fc8fd586a4d9ee2db027d142f8a27ba6",
+    "source_path": "README.md",
+    "sha256": "23b9967863783b3d109b129adae94018331e90f3298ed1c00cae0fae6262125f"
+  },
+  {
+    "id": "mixseq_expt_meta_data_R",
+    "url": "https://raw.githubusercontent.com/broadinstitute/mix_seq_ms/edcf2266fc8fd586a4d9ee2db027d142f8a27ba6/src/expt_meta_data.R",
+    "path": "sources/mixseq_expt_meta_data.R",
+    "kind": "sources",
+    "source_repo": "broadinstitute/mix_seq_ms",
+    "source_commit": "edcf2266fc8fd586a4d9ee2db027d142f8a27ba6",
+    "source_path": "src/expt_meta_data.R",
+    "sha256": "b7f42bb4786182697a79e965b9927009bfbae6a8193e162b44ffed907ad17aca"
+  },
+  {
+    "id": "frangieh_README_md",
+    "url": "https://raw.githubusercontent.com/klarman-cell-observatory/Perturb-CITE-seq/c90d46f268ffb7b30e9b35fc23ddd0967feca42b/README.md",
+    "path": "sources/frangieh_README.md",
+    "kind": "sources",
+    "source_repo": "klarman-cell-observatory/Perturb-CITE-seq",
+    "source_commit": "c90d46f268ffb7b30e9b35fc23ddd0967feca42b",
+    "source_path": "README.md",
+    "sha256": "917bd98b2360e4ecf9ff228a234e7e2300fe9016a189325e6996da2095dd8d4b"
+  },
+  {
+    "id": "scgen-repro_README_md",
+    "url": "https://raw.githubusercontent.com/theislab/scgen-reproducibility/5e6fbc22bfaf17c6e1460e5fde3d24629cd62605/README.md",
+    "path": "sources/scgen-repro_README.md",
+    "kind": "sources",
+    "source_repo": "theislab/scgen-reproducibility",
+    "source_commit": "5e6fbc22bfaf17c6e1460e5fde3d24629cd62605",
+    "source_path": "README.md",
+    "sha256": "2f6c234542e6500d95694cd3440001d7ec9b0ce125c5d7388d4b71b5718c78db"
+  },
+  {
+    "id": "scperturbench_README_md",
+    "url": "https://raw.githubusercontent.com/bm2-lab/scPerturBench/698f8ff5ed19530bff171e4205be9b42a46a769d/README.md",
+    "path": "sources/scperturbench_README.md",
+    "kind": "sources",
+    "source_repo": "bm2-lab/scPerturBench",
+    "source_commit": "698f8ff5ed19530bff171e4205be9b42a46a769d",
+    "source_path": "README.md",
+    "sha256": "ec8376fbdcc069a910f69c48b93c00b9e43c2e04a7b83117297606aff73bec15"
+  },
+  {
+    "id": "tahoe_README_md",
+    "url": "https://raw.githubusercontent.com/theislab/vevo_Tahoe_100m_analysis/95810f30b7633d56c46c6a63b9f4145bceaf8449/README.md",
+    "path": "sources/tahoe_README.md",
+    "kind": "sources",
+    "source_repo": "theislab/vevo_Tahoe_100m_analysis",
+    "source_commit": "95810f30b7633d56c46c6a63b9f4145bceaf8449",
+    "source_path": "README.md",
+    "sha256": "6880e211f27cd61cedd0f7d9174966e22fe7c765637a2eac3bbdc71f4888a387"
+  },
+  {
+    "id": "tahoe_index_md",
+    "url": "https://raw.githubusercontent.com/theislab/vevo_Tahoe_100m_analysis/95810f30b7633d56c46c6a63b9f4145bceaf8449/notebooks/index.md",
+    "path": "sources/tahoe_index.md",
+    "kind": "sources",
+    "source_repo": "theislab/vevo_Tahoe_100m_analysis",
+    "source_commit": "95810f30b7633d56c46c6a63b9f4145bceaf8449",
+    "source_path": "notebooks/index.md",
+    "sha256": "e3a3bcf4a59b45170f71360027075ee9f8827b36a3d539600793e52b2b07fc53"
+  },
+  {
+    "id": "scperturbench_all_dataset_chemical",
+    "url": "https://raw.githubusercontent.com/bm2-lab/scPerturBench/698f8ff5ed19530bff171e4205be9b42a46a769d/Results/Chemical_perturbation/all_dataset_chemical.csv",
+    "path": "sources/scperturbench_all_dataset_chemical.csv",
+    "kind": "benchmark_results",
+    "source_repo": "bm2-lab/scPerturBench",
+    "source_commit": "698f8ff5ed19530bff171e4205be9b42a46a769d",
+    "source_path": "Results/Chemical_perturbation/all_dataset_chemical.csv",
+    "sha256": "541452ad9b3c3f0635cf7d6df6611909d3ebd2c29de7ad85f761fda09a9195b0"
+  },
+  {
+    "id": "scperturbench_all_dataset_genetic",
+    "url": "https://raw.githubusercontent.com/bm2-lab/scPerturBench/698f8ff5ed19530bff171e4205be9b42a46a769d/Results/Genetic_perturbation/all_dataset_genetic.csv",
+    "path": "sources/scperturbench_all_dataset_genetic.csv",
+    "kind": "benchmark_results",
+    "source_repo": "bm2-lab/scPerturBench",
+    "source_commit": "698f8ff5ed19530bff171e4205be9b42a46a769d",
+    "source_path": "Results/Genetic_perturbation/all_dataset_genetic.csv",
+    "enabled": false,
+    "note": "55,119,282 byte benchmark-results table; not needed, excluded after HEAD size check. This is NOT an expression matrix."
+  },
+  {
+    "id": "scperturbench_cellular_ood_performance_top100",
+    "url": "https://raw.githubusercontent.com/bm2-lab/scPerturBench/698f8ff5ed19530bff171e4205be9b42a46a769d/Results/Cellular_context_ood/cellular_ood_performance_top100.csv",
+    "path": "sources/scperturbench_cellular_ood_performance_top100.csv",
+    "kind": "benchmark_results",
+    "source_repo": "bm2-lab/scPerturBench",
+    "source_commit": "698f8ff5ed19530bff171e4205be9b42a46a769d",
+    "source_path": "Results/Cellular_context_ood/cellular_ood_performance_top100.csv",
+    "sha256": "9e612498d94e664d5c33a373f4fd110ed2052615e3bbebcbd5dd49fe37439cc9"
+  },
+  {
+    "id": "scperturb_Snakefile",
+    "url": "https://raw.githubusercontent.com/sanderlab/scPerturb/b69f72a070a92bcbaf41e7f9897b11598109ab48/dataset_processing/download/Snakefile",
+    "path": "sources/scperturb_Snakefile",
+    "kind": "processing",
+    "source_repo": "sanderlab/scPerturb",
+    "source_commit": "b69f72a070a92bcbaf41e7f9897b11598109ab48",
+    "source_path": "dataset_processing/download/Snakefile",
+    "sha256": "b9e61debcb3077faa61d32694b42a0e7d3c40f4a436f296932b0fd9978d69fb7"
+  },
+  {
+    "id": "scperturb_process_supp_py",
+    "url": "https://raw.githubusercontent.com/sanderlab/scPerturb/b69f72a070a92bcbaf41e7f9897b11598109ab48/dataset_processing/scripts/process_supp.py",
+    "path": "sources/scperturb_process_supp.py",
+    "kind": "processing",
+    "source_repo": "sanderlab/scPerturb",
+    "source_commit": "b69f72a070a92bcbaf41e7f9897b11598109ab48",
+    "source_path": "dataset_processing/scripts/process_supp.py",
+    "sha256": "1951cd1cd2121a816b02ee98a9ed29d12d6e8a5305d6cf9f3ec16aab30dd9ae5"
+  },
+  {
+    "id": "scperturb_data_access_and_preprocessing_JS_ipynb",
+    "url": "https://raw.githubusercontent.com/sanderlab/scPerturb/b69f72a070a92bcbaf41e7f9897b11598109ab48/dataset_processing/notebooks/data_access_and_preprocessing_JS.ipynb",
+    "path": "sources/scperturb_data_access_and_preprocessing_JS.ipynb",
+    "kind": "processing",
+    "source_repo": "sanderlab/scPerturb",
+    "source_commit": "b69f72a070a92bcbaf41e7f9897b11598109ab48",
+    "source_path": "dataset_processing/notebooks/data_access_and_preprocessing_JS.ipynb",
+    "sha256": "1c63d27f4a1c7cbd5c8ca73d5de8e33ef9c4e4f835ccfeb861d225a51fb21c60"
+  },
+  {
+    "id": "state_parse_tomls_donor_toml",
+    "url": "https://raw.githubusercontent.com/arcinstitute/state/9bbfe78a434a55205e4de834e1ea99f85f7a3add/state_preprint_toml_files/parse_tomls/donor.toml",
+    "path": "sources/state_parse_tomls_donor.toml",
+    "kind": "model_split_config",
+    "source_repo": "arcinstitute/state",
+    "source_commit": "9bbfe78a434a55205e4de834e1ea99f85f7a3add",
+    "source_path": "state_preprint_toml_files/parse_tomls/donor.toml",
+    "sha256": "f334a2ab6d01dc89e5c1d7868d8d19990ee1475d50331d30ed2d5148f7cec6cc"
+  },
+  {
+    "id": "state_parse_tomls_celltype_toml",
+    "url": "https://raw.githubusercontent.com/arcinstitute/state/9bbfe78a434a55205e4de834e1ea99f85f7a3add/state_preprint_toml_files/parse_tomls/celltype.toml",
+    "path": "sources/state_parse_tomls_celltype.toml",
+    "kind": "model_split_config",
+    "source_repo": "arcinstitute/state",
+    "source_commit": "9bbfe78a434a55205e4de834e1ea99f85f7a3add",
+    "source_path": "state_preprint_toml_files/parse_tomls/celltype.toml",
+    "sha256": "5f1e7836492e6f39a37fffad93f7dfd78b4cfbd9a9ebb2f63558b39f7a1716cc"
+  },
+  {
+    "id": "state_parse_tomls_split_1_toml",
+    "url": "https://raw.githubusercontent.com/arcinstitute/state/9bbfe78a434a55205e4de834e1ea99f85f7a3add/state_preprint_toml_files/parse_tomls/split_1.toml",
+    "path": "sources/state_parse_tomls_split_1.toml",
+    "kind": "model_split_config",
+    "source_repo": "arcinstitute/state",
+    "source_commit": "9bbfe78a434a55205e4de834e1ea99f85f7a3add",
+    "source_path": "state_preprint_toml_files/parse_tomls/split_1.toml",
+    "sha256": "c48c807449bfff1bbb8c0070766a9b29198b9b256b14a0f55fba6422a13c420a"
+  },
+  {
+    "id": "state_tahoe_tomls_generalization_toml",
+    "url": "https://raw.githubusercontent.com/arcinstitute/state/9bbfe78a434a55205e4de834e1ea99f85f7a3add/state_preprint_toml_files/tahoe_tomls/generalization.toml",
+    "path": "sources/state_tahoe_tomls_generalization.toml",
+    "kind": "model_split_config",
+    "source_repo": "arcinstitute/state",
+    "source_commit": "9bbfe78a434a55205e4de834e1ea99f85f7a3add",
+    "source_path": "state_preprint_toml_files/tahoe_tomls/generalization.toml",
+    "sha256": "eac16fb06052dec9d6842dfae04d5ca693b847e3432f719a975adce205707783"
+  },
+  {
+    "id": "state_replogle_tomls_k562_toml",
+    "url": "https://raw.githubusercontent.com/arcinstitute/state/9bbfe78a434a55205e4de834e1ea99f85f7a3add/state_preprint_toml_files/replogle_tomls/k562.toml",
+    "path": "sources/state_replogle_tomls_k562.toml",
+    "kind": "model_split_config",
+    "source_repo": "arcinstitute/state",
+    "source_commit": "9bbfe78a434a55205e4de834e1ea99f85f7a3add",
+    "source_path": "state_preprint_toml_files/replogle_tomls/k562.toml",
+    "sha256": "a794ae85cacbb8ae2ce59ad5ba0fb465f5be244950b84aea28c7fa29226597c3"
+  },
+  {
+    "id": "state_replogle_tomls_rpe1_toml",
+    "url": "https://raw.githubusercontent.com/arcinstitute/state/9bbfe78a434a55205e4de834e1ea99f85f7a3add/state_preprint_toml_files/replogle_tomls/rpe1.toml",
+    "path": "sources/state_replogle_tomls_rpe1.toml",
+    "kind": "model_split_config",
+    "source_repo": "arcinstitute/state",
+    "source_commit": "9bbfe78a434a55205e4de834e1ea99f85f7a3add",
+    "source_path": "state_preprint_toml_files/replogle_tomls/rpe1.toml",
+    "sha256": "1681633c6b902933a8e83aae07d941ba2e63e5b968be0b80fea61a247308ecdc"
+  },
+  {
+    "id": "state_replogle_tomls_hepg2_toml",
+    "url": "https://raw.githubusercontent.com/arcinstitute/state/9bbfe78a434a55205e4de834e1ea99f85f7a3add/state_preprint_toml_files/replogle_tomls/hepg2.toml",
+    "path": "sources/state_replogle_tomls_hepg2.toml",
+    "kind": "model_split_config",
+    "source_repo": "arcinstitute/state",
+    "source_commit": "9bbfe78a434a55205e4de834e1ea99f85f7a3add",
+    "source_path": "state_preprint_toml_files/replogle_tomls/hepg2.toml",
+    "sha256": "7f8d5df29942f7532fef09b23a0a8deec7b8339bfe7817505b977bd894813962"
+  },
+  {
+    "id": "state_replogle_tomls_jurkat_toml",
+    "url": "https://raw.githubusercontent.com/arcinstitute/state/9bbfe78a434a55205e4de834e1ea99f85f7a3add/state_preprint_toml_files/replogle_tomls/jurkat.toml",
+    "path": "sources/state_replogle_tomls_jurkat.toml",
+    "kind": "model_split_config",
+    "source_repo": "arcinstitute/state",
+    "source_commit": "9bbfe78a434a55205e4de834e1ea99f85f7a3add",
+    "source_path": "state_preprint_toml_files/replogle_tomls/jurkat.toml",
+    "sha256": "9606316c24dfd140bbfe7e252375c18283d4f4f10b5a4adcb463a87cd1472634"
+  },
+  {
+    "id": "state_primary_readme",
+    "url": "https://raw.githubusercontent.com/arcinstitute/state/9bbfe78a434a55205e4de834e1ea99f85f7a3add/README.md",
+    "path": "sources/state_primary_readme.md",
+    "kind": "sources",
+    "source_repo": "arcinstitute/state",
+    "source_commit": "9bbfe78a434a55205e4de834e1ea99f85f7a3add",
+    "source_path": "README.md",
+    "sha256": "568c0b4f9d93374f7ebc7467c226fdde0050abfd60147bce0b316163bf4199d6"
+  },
+  {
+    "id": "cinemaot_primary_readme",
+    "url": "https://raw.githubusercontent.com/vandijklab/CINEMA-OT/949bc3f587285a5c7ed92c6d3fd345b42a9f791c/Readme.md",
+    "path": "sources/cinemaot_primary_readme.md",
+    "kind": "sources",
+    "source_repo": "vandijklab/CINEMA-OT",
+    "source_commit": "949bc3f587285a5c7ed92c6d3fd345b42a9f791c",
+    "source_path": "Readme.md",
+    "sha256": "7b4d964a044fc1eeb23a6fb627258132ae54ebd7c642a10a08949b80657a8909"
+  },
+  {
+    "id": "scperturb_NadigOConner2024_ipynb",
+    "url": "https://raw.githubusercontent.com/sanderlab/scPerturb/b69f72a070a92bcbaf41e7f9897b11598109ab48/dataset_processing/notebooks/NadigOConner2024.ipynb",
+    "path": "sources/scperturb_NadigOConner2024.ipynb",
+    "kind": "processing",
+    "source_repo": "sanderlab/scPerturb",
+    "source_commit": "b69f72a070a92bcbaf41e7f9897b11598109ab48",
+    "source_path": "dataset_processing/notebooks/NadigOConner2024.ipynb",
+    "sha256": "65db1f093b35e7953eff16be1256214677660cf8894e0d9abc5f75a034b28677"
+  },
+  {
+    "id": "arc_atlas_root",
+    "url": "https://raw.githubusercontent.com/arcinstitute/arc-virtual-cell-atlas/4f7bb170c61d2fafce70f67db6e52c7d9af1be4b/README.md",
+    "path": "sources/arc_atlas_root.md",
+    "kind": "official_data_documentation",
+    "source_repo": "arcinstitute/arc-virtual-cell-atlas",
+    "source_commit": "4f7bb170c61d2fafce70f67db6e52c7d9af1be4b",
+    "source_path": "README.md",
+    "sha256": "4ba41091e68ff6f5a91f63db629f03f046783eb6965ee295c611d72038579bfc"
+  },
+  {
+    "id": "arc_atlas_tahoe-100M",
+    "url": "https://raw.githubusercontent.com/arcinstitute/arc-virtual-cell-atlas/4f7bb170c61d2fafce70f67db6e52c7d9af1be4b/tahoe-100M/README.md",
+    "path": "sources/arc_atlas_tahoe-100M.md",
+    "kind": "official_data_documentation",
+    "source_repo": "arcinstitute/arc-virtual-cell-atlas",
+    "source_commit": "4f7bb170c61d2fafce70f67db6e52c7d9af1be4b",
+    "source_path": "tahoe-100M/README.md",
+    "sha256": "f9ba11a78572739696ebb515ded0ef74767718c240a715935fa0a10a986148b7"
+  },
+  {
+    "id": "arc_atlas_scBaseCount",
+    "url": "https://raw.githubusercontent.com/arcinstitute/arc-virtual-cell-atlas/4f7bb170c61d2fafce70f67db6e52c7d9af1be4b/scBaseCount/README.md",
+    "path": "sources/arc_atlas_scBaseCount.md",
+    "kind": "official_data_documentation",
+    "source_repo": "arcinstitute/arc-virtual-cell-atlas",
+    "source_commit": "4f7bb170c61d2fafce70f67db6e52c7d9af1be4b",
+    "source_path": "scBaseCount/README.md",
+    "sha256": "9986e77d3ed20efce7fc5d7ce7f06ab25aa8b87541b420189c85316c05952a4a"
+  },
+  {
+    "id": "arc_atlas_virtual-cell-challenge",
+    "url": "https://raw.githubusercontent.com/arcinstitute/arc-virtual-cell-atlas/4f7bb170c61d2fafce70f67db6e52c7d9af1be4b/virtual-cell-challenge/README.md",
+    "path": "sources/arc_atlas_virtual-cell-challenge.md",
+    "kind": "official_data_documentation",
+    "source_repo": "arcinstitute/arc-virtual-cell-atlas",
+    "source_commit": "4f7bb170c61d2fafce70f67db6e52c7d9af1be4b",
+    "source_path": "virtual-cell-challenge/README.md",
+    "sha256": "e61c3e5dbe4c18a10f9545f7441c43e3a6ae6061fad9f6aaa21cb375e43c4e58"
+  },
+  {
+    "id": "op3_primary_readme",
+    "url": "https://raw.githubusercontent.com/openproblems-bio/task_perturbation_prediction/626f94521fd236e6b79cc60696159172dd07d2bd/README.md",
+    "path": "sources/op3_primary_readme.md",
+    "kind": "official_data_schema",
+    "source_repo": "openproblems-bio/task_perturbation_prediction",
+    "source_commit": "626f94521fd236e6b79cc60696159172dd07d2bd",
+    "source_path": "README.md",
+    "sha256": "a50114223e28bf52e578466bc0af92a88337470c01e1d7640033859f199d99a4"
+  },
+  {
+    "id": "scgpt_primary_readme",
+    "url": "https://raw.githubusercontent.com/bowang-lab/scGPT/cebd6fae655b9c585a4807daa3ac31bb764f06b4/README.md",
+    "path": "sources/scgpt_primary_readme.md",
+    "kind": "pretraining_evidence",
+    "source_repo": "bowang-lab/scGPT",
+    "source_commit": "cebd6fae655b9c585a4807daa3ac31bb764f06b4",
+    "source_path": "README.md",
+    "sha256": "b0503e8ca789f19f1fc2350c5aaf57b1b323bbae43b354655231b5f4a1586c83"
+  },
+  {
+    "id": "scperturbench_genetic_single_performance_top100",
+    "url": "https://raw.githubusercontent.com/bm2-lab/scPerturBench/698f8ff5ed19530bff171e4205be9b42a46a769d/Results/Genetic_perturbation/genetic_single_performance_top100.csv",
+    "path": "sources/scperturbench_genetic_single_performance_top100.csv",
+    "kind": "benchmark_results",
+    "source_repo": "bm2-lab/scPerturBench",
+    "source_commit": "698f8ff5ed19530bff171e4205be9b42a46a769d",
+    "source_path": "Results/Genetic_perturbation/genetic_single_performance_top100.csv",
+    "sha256": "6f945be13393e03e61446957ef159dee0d02981a85ff118f4ff467b898742cb5"
+  },
+  {
+    "id": "scperturbench_genetic_combo_performance_top100",
+    "url": "https://raw.githubusercontent.com/bm2-lab/scPerturBench/698f8ff5ed19530bff171e4205be9b42a46a769d/Results/Genetic_perturbation/genetic_combo_performance_top100.csv",
+    "path": "sources/scperturbench_genetic_combo_performance_top100.csv",
+    "kind": "benchmark_results",
+    "source_repo": "bm2-lab/scPerturBench",
+    "source_commit": "698f8ff5ed19530bff171e4205be9b42a46a769d",
+    "source_path": "Results/Genetic_perturbation/genetic_combo_performance_top100.csv",
+    "sha256": "36db8b048e3a2811968cae4e8175c2e1a768225bb6767e0a1d1f543e21210e57"
+  }
+]

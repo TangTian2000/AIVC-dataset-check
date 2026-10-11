@@ -1,0 +1,149 @@
+CELL 0 [code]
+!pip install mygene statannotations scrublet scanpy scvelo decoupler goatools gseapy scperturb chembl_webresource_client biomart PyComplexHeatmap statsmodels omnipath git+https://github.com/saezlab/pypath.git --quiet
+
+CELL 1 [code]
+import subprocess
+import os
+import sys
+import matplotlib.backends.backend_pdf
+import scanpy as sc
+import matplotlib.pyplot as pl
+import anndata as ad
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import scvelo as scv
+scv.settings.verbosity=1
+
+from pathlib import Path
+
+# Jupyter stuff
+from tqdm.notebook import tqdm
+from IPython.display import clear_output
+from IPython.core.display import display, HTML
+display(HTML("<style>.container { width:95% !important; }</style>"))
+
+%matplotlib inline
+
+# Custom functions
+sys.path.insert(1, '../')
+from utils import *
+
+# scperturb package
+sys.path.insert(1, '../package/src/')
+from scperturb import *
+
+from pathlib import Path
+figure_path = Path('../figures/')
+
+CELL 2 [code]
+TEMPDIR = Path('/scratch/peidli/scPerturb/')
+DATADIR = Path('/scratch/peidli/scPerturb/')
+
+CELL 3 [markdown]
+# GSM7056149_sciPlexGxE_2
+
+CELL 4 [code]
+# adata = sc.read('/scratch/peidli/scPerturb/McFalineTrapnell2023/GSM7056149_sciPlexGxE_2_temp.h5ad')
+
+CELL 5 [code]
+hashTable = pd.read_csv(TEMPDIR / f'McFalineTrapnell2023/GSM7056149_sciPlexGxE_2_hashTable.out.txt', sep='\t', index_col=1, header=None,
+                        names = ['orig_ident', 'cell_barcode', 'plate_id', 'all_ones', 'counts'])
+
+CELL 6 [code]
+# subset
+# hashTable = hashTable[hashTable.index.isin(adata.obs_names)]
+
+CELL 7 [code]
+from scipy.sparse import csr_matrix
+from pandas.api.types import CategoricalDtype
+
+def sparse_pivot(df, values, index, columns, fill_value=0):
+    # https://stackoverflow.com/questions/31661604/efficiently-create-sparse-pivot-tables-in-pandas
+    row_c = CategoricalDtype(sorted(df[index].unique()), ordered=True)
+    col_c = CategoricalDtype(sorted(df[columns].unique()), ordered=True)
+    
+    row = df[index].astype(row_c).cat.codes
+    col = df[columns].astype(col_c).cat.codes
+    
+    sparse_matrix = csr_matrix((df[values], (row, col)), \
+                           shape=(row_c.categories.size, col_c.categories.size))
+    return sparse_matrix, row_c.categories, col_c.categories
+
+CELL 8 [code]
+# too big: df_hash = pd.pivot_table(hashTable, values='counts', index='cell_barcode', columns='plate_id', fill_value=0)
+A, rows, cols = sparse_pivot(hashTable.reset_index(), values='counts', index='cell_barcode', columns='plate_id', fill_value=0)
+
+CELL 9 [code]
+# just take highest
+most_counts = np.ravel(A.argmax(axis=1))
+best_plates = pd.DataFrame(list(cols[most_counts]), index = rows, columns=['best_plate_id'])  # best plate for each cell barcode (index)
+
+CELL 10 [code]
+best_plates
+
+CELL 11 [code]
+adata.obs = pd.merge(adata.obs, best_plates, left_index=True, right_index=True, how='left')
+
+CELL 12 [code]
+adata.obs
+
+CELL 13 [code]
+# useless?
+hash_sample_sheet = pd.read_csv(TEMPDIR / f'McFalineTrapnell2023/{prefix}_hash_sample_sheet.txt', sep='\t', index_col=0, header=None)
+hash_sample_sheet.head()
+
+CELL 14 [code]
+# useless?
+sgRNA_sequences = pd.read_csv(TEMPDIR / f'McFalineTrapnell2023/{prefix}_sgRNA_sequences.txt.gz', sep='\t', index_col=2)
+sgRNA_sequences.head()
+
+CELL 15 [code]
+
+
+CELL 16 [code]
+
+
+CELL 17 [code]
+
+
+CELL 18 [code]
+
+
+CELL 19 [code]
+
+
+CELL 20 [code]
+
+
+CELL 21 [code]
+
+
+CELL 22 [code]
+
+
+CELL 23 [code]
+
+
+CELL 24 [code]
+
+
+CELL 25 [code]
+
+
+CELL 26 [code]
+
+
+CELL 27 [code]
+
+
+CELL 28 [code]
+
+
+CELL 29 [code]
+
+
+CELL 30 [code]
+
+
+CELL 31 [code]

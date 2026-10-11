@@ -1,0 +1,11 @@
+replicate,dose,n_design_samples
+rep1,0,52
+rep1,10,611
+rep1,100,611
+rep1,1000,611
+rep1,10000,611
+rep2,0,52
+rep2,10,611
+rep2,100,611
+rep2,1000,611
+rep2,10000,611

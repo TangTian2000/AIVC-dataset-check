@@ -1,0 +1,98 @@
+[
+  {
+    "id": "norman_metadata",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE133nnn/GSE133344/suppl/GSE133344_filtered_cell_identities.csv.gz",
+    "purpose": "metadata",
+    "method": "HEAD"
+  },
+  {
+    "id": "combo_metadata",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE206nnn/GSE206741/suppl/GSE206741_cell_metadata.tsv.gz",
+    "purpose": "metadata filename gz variant; exact packaging unverified",
+    "method": "HEAD"
+  },
+  {
+    "id": "gxE_hash_metadata",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7056nnn/GSM7056149/suppl/GSM7056149_sciPlexGxE_2_hashTable.out.txt.gz",
+    "purpose": "hash metadata; cannot assume all barcodes pass RNA QC",
+    "method": "HEAD"
+  },
+  {
+    "id": "op3_h5ad",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE279nnn/GSE279945/suppl/GSE279945_sc_counts_processed.h5ad",
+    "purpose": "expression container; HEAD only",
+    "method": "HEAD"
+  },
+  {
+    "id": "frangieh_h5ad",
+    "url": "https://zenodo.org/records/7041849/files/FrangiehIzar2021_RNA.h5ad?download=1",
+    "purpose": "expression container; HEAD only",
+    "method": "HEAD"
+  },
+  {
+    "id": "jiang_IFNB_RDS",
+    "url": "https://zenodo.org/records/10520190/files/Seurat_object_IFNB_Perturb_seq.rds?download=1",
+    "purpose": "expression container; HEAD only",
+    "method": "HEAD"
+  },
+  {
+    "id": "gxE1_RDS",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM7056nnn/GSM7056148/suppl/GSM7056148_sciPlexGxE_1_preprocessed_cds.rds.gz",
+    "purpose": "expression container; HEAD only",
+    "method": "HEAD"
+  },
+  {
+    "id": "mixseq_record",
+    "url": "https://api.figshare.com/v2/articles/10298696",
+    "purpose": "file listing for original author record",
+    "method": "HEAD"
+  },
+  {
+    "id": "replogle_portal",
+    "url": "https://gwps.wi.mit.edu/",
+    "purpose": "original portal",
+    "method": "HEAD"
+  },
+  {
+    "id": "scverse_norman",
+    "url": "https://exampledata.scverse.org/pertpy/norman_2019_raw.h5ad",
+    "purpose": "expression container alternative; HEAD only",
+    "method": "HEAD"
+  },
+  {
+    "id": "gears_paper",
+    "url": "https://www.nature.com/articles/s41587-023-01905-6",
+    "purpose": "original model paper, paper access check",
+    "method": "HEAD"
+  },
+  {
+    "id": "replogle_paper_doi",
+    "url": "https://doi.org/10.1016/j.cell.2022.05.013",
+    "purpose": "original dataset paper resolution",
+    "method": "HEAD"
+  },
+  {
+    "id": "tahoe_current_card",
+    "url": "https://huggingface.co/api/datasets/tahoebio/Tahoe-100M",
+    "purpose": "official data card alternative (identity/version must be verified)",
+    "method": "HEAD"
+  },
+  {
+    "id": "parse_official_catalog",
+    "url": "https://www.parsebiosciences.com/datasets/",
+    "purpose": "official data catalog; exact Parse cytokine resource card not yet resolved",
+    "method": "HEAD"
+  },
+  {
+    "id": "vcc_datasets",
+    "url": "https://virtualcellchallenge.org/datasets",
+    "purpose": "official challenge resources",
+    "method": "HEAD"
+  },
+  {
+    "id": "cinemaot_dryad",
+    "url": "https://datadryad.org/stash/dataset/doi:10.5061/dryad.4xgxd25g1",
+    "purpose": "original data record",
+    "method": "HEAD"
+  }
+]

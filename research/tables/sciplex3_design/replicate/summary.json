@@ -1,0 +1,19 @@
+{
+  "unit": "n_design_samples",
+  "rows": 4992,
+  "batch_or_group_key": "replicate",
+  "groups": 2,
+  "perturbation_labels": 189,
+  "control_rows": 104,
+  "strict_strata": [
+    "cell_type",
+    "dose",
+    "time_point"
+  ],
+  "min_n": 1,
+  "strict_conditions": 2448,
+  "strict_conditions_cross_groups": 2448,
+  "eligible_heldout_condition_groups": 4888,
+  "evaluated_heldout_condition_groups": 4888,
+  "provenance": "Author Supplementary_Table_3 + hashMeta mapping; NOT cells. plate_oligo maps to culture_plate in Notebook1. replicate labels are not yet proven independent culture runs."
+}

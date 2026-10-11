@@ -1,0 +1,9 @@
+cell_type,replicate,time_point,n_design_samples
+A549,rep1,24,768
+A549,rep1,72,192
+A549,rep2,24,768
+A549,rep2,72,192
+K562,rep1,24,768
+K562,rep2,24,768
+MCF7,rep1,24,768
+MCF7,rep2,24,768
