@@ -1,0 +1,21 @@
+# Required read-only literature/data destinations; not an applied network policy.
+api.figshare.com
+datadryad.org
+doi.org
+europepmc.org
+exampledata.scverse.org
+figshare.com
+ftp.ncbi.nlm.nih.gov
+gwps.wi.mit.edu
+huggingface.co
+pmc.ncbi.nlm.nih.gov
+singlecell.broadinstitute.org
+virtualcellchallenge.org
+www.biorxiv.org
+www.cell.com
+www.ebi.ac.uk
+www.nature.com
+www.ncbi.nlm.nih.gov
+www.parsebiosciences.com
+www.science.org
+zenodo.org

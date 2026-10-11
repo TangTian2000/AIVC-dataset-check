@@ -1,0 +1,101 @@
+CELL 0 [code]
+import subprocess
+import os
+import sys
+import matplotlib.backends.backend_pdf
+import scanpy as sc
+import matplotlib.pyplot as pl
+import anndata as ad
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import scvelo as scv
+scv.settings.verbosity=1
+
+from pathlib import Path
+
+# Jupyter stuff
+from tqdm.auto import tqdm
+from IPython.display import clear_output
+from IPython.core.display import display, HTML
+display(HTML("<style>.container { width:95% !important; }</style>"))
+
+%matplotlib inline
+
+# Custom functions
+sys.path.insert(1, '../..')
+%load_ext autoreload
+%autoreload 2
+from utils import *
+
+# scperturb package
+sys.path.insert(1, '../../package/src/')
+from scperturb import *
+
+from pathlib import Path
+figure_path = Path('../../figures/')
+
+CELL 1 [code]
+DATADIR = Path('/data/gpfs-1/users/peidlis_c/work/data/perturbation_resource_paper')
+TEMPDIR = Path("/fast/scratch/users/peidlis_c/perturbation_resource_paper/")
+
+CELL 2 [code]
+adata = sc.read(TEMPDIR / 'tmp_data_ReplogleWeissman2022_K562_gwps.h5')
+
+CELL 3 [code]
+adata
+
+CELL 4 [code]
+adata
+
+CELL 5 [code]
+# basic qc and pp
+print('Shape before filtering: ', adata.shape)
+sc.pp.filter_cells(adata, min_counts=1000)
+adata = equal_subsampling(adata, 'perturbation', N_min=200)
+print('aaa')
+adata.layers['counts'] = adata.X.copy()
+print('Normalizing counts...')
+sc.pp.normalize_per_cell(adata)
+sc.pp.filter_genes(adata, min_cells=50)
+print('Applying log1p...')
+sc.pp.log1p(adata)
+print('Shape after filtering: ', adata.shape)
+
+CELL 6 [code]
+adata
+
+CELL 7 [code]
+
+
+CELL 8 [code]
+
+
+CELL 9 [code]
+
+
+CELL 10 [code]
+
+
+CELL 11 [code]
+
+
+CELL 12 [code]
+
+
+CELL 13 [code]
+
+
+CELL 14 [code]
+
+
+CELL 15 [code]
+
+
+CELL 16 [code]
+
+
+CELL 17 [code]
+
+
+CELL 18 [code]

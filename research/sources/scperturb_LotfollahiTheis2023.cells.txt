@@ -1,0 +1,88 @@
+CELL 0 [code]
+!pip install mygene statannotations scrublet scanpy scvelo decoupler matplotlib_venn goatools gseapy scperturb biomart PyComplexHeatmap statsmodels omnipath git+https://github.com/saezlab/pypath.git --quiet
+
+CELL 1 [code]
+import subprocess
+import os
+import sys
+import matplotlib.backends.backend_pdf
+import scanpy as sc
+import matplotlib.pyplot as pl
+import anndata as ad
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import scvelo as scv
+scv.settings.verbosity=1
+
+from pathlib import Path
+
+# Jupyter stuff
+from tqdm.notebook import tqdm
+from IPython.display import clear_output
+from IPython.core.display import display, HTML
+display(HTML("<style>.container { width:95% !important; }</style>"))
+
+%matplotlib inline
+
+# Custom functions
+sys.path.insert(1, '../')
+from utils import *
+
+# scperturb package
+sys.path.insert(1, '../package/src/')
+from scperturb import *
+
+from pathlib import Path
+figure_path = Path('../figures/')
+
+CELL 2 [code]
+TEMPDIR = Path('/scratch/peidli/scPerturb/')
+
+CELL 3 [code]
+sorted([file.name for file in (TEMPDIR / 'LotfollahiTheis2023/').glob('*')])
+
+CELL 4 [code]
+from scipy.io import mmread
+from scipy.sparse import csr_matrix
+obs = pd.read_csv(TEMPDIR / f'LotfollahiTheis2023/GSE206741_cell_metadata.tsv', index_col=0, sep='\t')
+var = pd.read_csv(TEMPDIR / f'LotfollahiTheis2023/GSE206741_gene_metadata.tsv', index_col=0, sep='\t')
+X = csr_matrix(mmread(TEMPDIR / f'LotfollahiTheis2023/GSE206741_count_matrix.mtx'))
+
+
+CELL 5 [code]
+adata = sc.AnnData(X.T, obs, var)
+
+adata.var.set_index('gene_short_name', inplace=True, drop=False)
+adata.var.columns = ['ensembl_id']
+adata.var.index.name = 'gene_symbol'
+
+adata.obs['perturbation'] = ['_'.join(np.sort([d1,d2])).replace('\xa0','') for d1, d2 in zip(adata.obs.Drug1, adata.obs.Drug2)]
+adata.obs['perturbation'] = [x.replace('DMSO_', '').replace('_DMSO', '').replace('DMSO', 'control') for x in adata.obs.perturbation]
+adata.obs.index.name = 'cell_barcode'
+adata.obs.rename({
+    'n.umi': 'ncounts', 
+}, axis=1, inplace=True)
+adata.obs.drop(['sample', 'Drug1', 'Drug2'], axis=1, inplace=True)
+adata.obs = adata.obs[['perturbation', 'Size_Factor', 'ncounts', 'RT_well', 'Well']]
+adata.obs['nperts'] = [p.count('_')+1-p.count('control') if type(p)==str else 0 for p in adata.obs.perturbation]
+adata.obs['perturbation_type'] = 'drug'
+adata.obs['disease'] = "lung adenocarcinoma"
+adata.obs['cancer'] = True
+adata.obs['tissue_type']="cell_line"
+adata.obs["cell_line"] = "A549"
+adata.obs["celltype"] = 'lung epthelial cells'
+adata.obs['organism'] = 'human'
+#annotate_qc(adata, species='human')
+#assert_annotations(adata)
+
+CELL 6 [code]
+
+
+CELL 7 [code]
+
+
+CELL 8 [code]
+
+
+CELL 9 [code]

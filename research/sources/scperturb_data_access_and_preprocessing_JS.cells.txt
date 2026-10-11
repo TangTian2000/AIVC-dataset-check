@@ -1,0 +1,336 @@
+CELL 0 [code]
+import glob
+import os
+import sys
+import numpy as np
+import pandas as pd
+import time
+
+import scanpy as sc
+import scipy
+
+from scipy.io import mmread
+from scipy.sparse import csr_matrix
+import gzip
+import matplotlib.pyplot as plt
+import re
+
+import tqdm.notebook as tq
+
+CELL 1 [code]
+path = "/n/data1/hms/cellbio/sander/judy/resource_paper/"
+
+CELL 2 [markdown]
+# FrangiehIzar2021
+
+CELL 3 [code]
+index = "FrangiehIzar2021"
+
+CELL 4 [code]
+grna = pd.read_csv(index+"/"+index+"/all_sgRNA_assignments.txt")
+grna.head()
+
+CELL 5 [code]
+obs = pd.read_csv(index+"/"+index+"/RNA_metadata.csv", skiprows=[1])
+obs.head()
+
+CELL 6 [code]
+umap = pd.read_csv(index+"/"+index+"/RNA_UMAP_cluster.csv", skiprows=[1])
+
+CELL 7 [code]
+obs["sgRNAs"] = grna["sgRNAs"]
+obs["umap_x"],obs["umap_y"] = umap["X"], umap["Y"]
+obs.head()
+
+CELL 8 [code]
+obs.to_csv(index+"/"+index+"/obs_preprocessed.csv")
+
+CELL 9 [code]
+protein = pd.read_csv(index+"/"+index+"/raw_CITE_expression.csv.gz")
+
+CELL 10 [code]
+protein_normalized = pd.read_csv(index+"/"+index+"/Protein_expression.csv.gz")
+
+CELL 11 [code]
+cellnames = np.array(protein_normalized.columns[1:])
+set(cellnames) - set(protein.columns[1:])
+
+CELL 12 [code]
+protein['CELL_27337'] = 0
+protein['CELL_34511'] = 0
+protein['CELL_56031'] = 0
+
+CELL 13 [code]
+reordered = protein.iloc[:,[np.where(protein.columns == x)[0][0] for x in cellnames]]
+
+CELL 14 [code]
+X = csr_matrix(reordered.values)
+obs = pd.read_csv(path+index+"/"+index+"/obs_preprocessed.csv",index_col=0)
+var = protein[["Unnamed: 0"]]
+adata = sc.AnnData(X.T, var=var, obs=obs)
+adata.var.columns = ["Protein"]
+adata.write(index+"/"+index+"/"+index+"_protein_preprocessed.h5")
+
+CELL 15 [code]
+X = csr_matrix(protein.iloc[:,1:].values)
+obs = pd.read_csv(path+index+"/"+index+"/obs_preprocessed.csv",index_col=0)
+var = protein[["Protein"]]
+adata = sc.AnnData(X.T, var=var, obs=obs)
+adata.write(index+"/"+index+"/"+index+"_protein_preprocessed.h5")
+
+CELL 16 [code]
+adata = sc.read(index+"/"+index+"/"+index+"_RNA_preprocessed_ckpt.h5")
+
+CELL 17 [code]
+adata
+
+CELL 18 [code]
+!zcat {index+"/"+index+"/RNA_expression.csv.gz"} | wc -l
+
+CELL 19 [code]
+!zcat {index+"/"+index+"/RNA_expression.csv.gz"} | tail -962 > {index+"/"+index+"/RNA_expression_tail962.csv.gz"}
+
+CELL 20 [code]
+chk=100
+dtypesdict = dict(zip(range(218331),["str"]+["float"]*218331))
+
+CELL 21 [code]
+count = 0
+df = pd.DataFrame()
+ctime = time.time()
+#for chunk in pd.read_csv(index+"/"+index+"/RNA_expression.csv.gz",chunksize=chk):
+for chunk in pd.read_csv(index+"/"+index+"/RNA_expression_tail962.csv",chunksize=chk,header=None,
+                         dtype = dtypesdict):
+#for chunk in pd.read_csv(index+"/"+index+"/RNA_expression.csv.gz",chunksize=chk,engine='pyarrow'):
+    #Xnew = csr_matrix(chunk.iloc[:,1:].values)
+    #X = scipy.sparse.vstack((X,Xnew))
+    df = pd.concat([df,chunk])
+    count += 1
+    print(time.time() - ctime)
+    print(count)
+    ctime = time.time()
+#endtime = time.time()
+
+CELL 22 [code]
+Xfull = scipy.sparse.vstack((adata.X.T,csr_matrix(df.iloc[:,1:].values)))
+
+CELL 23 [code]
+genes = df[[0]]
+genes.columns=["gene"]
+var = pd.concat([adata.var,genes])
+adatafull = sc.AnnData(Xfull.T,obs=adata.obs,var=var)
+adatafull.write(index+"/"+index+"/"+index+"_RNA_full_preprocessed.h5")
+
+CELL 24 [code]
+
+
+CELL 25 [markdown]
+# GasperiniShendure2019
+
+CELL 26 [code]
+## Done!
+
+CELL 27 [code]
+index = "GasperiniShendure2019"
+
+CELL 28 [code]
+genes = pd.read_csv(index+"/lowMOI/GSE120861_pilot_lowmoi_screen.genes.txt",header=None)
+genes.to_csv(index+"/lowMOI/var.csv")
+
+CELL 29 [code]
+genes = pd.read_csv(index+"/highMOI/GSE120861_pilot_highmoi_screen.genes.txt",header=None)
+genes.to_csv(index+"/highMOI/var.csv")
+
+CELL 30 [code]
+genes = pd.read_csv(index+"/atscale/GSE120861_at_scale_screen.genes.txt",header=None)
+genes.to_csv(index+"/atscale/var.csv")
+
+CELL 31 [markdown]
+# NormanWeissman2019
+
+CELL 32 [code]
+## Done!
+
+CELL 33 [code]
+index = "NormanWeissman2019"
+
+CELL 34 [code]
+cells = pd.read_csv(index+"/filtered/GSE133344_filtered_cell_identities.csv.gz")
+
+CELL 35 [code]
+cells
+
+CELL 36 [code]
+genes = pd.read_csv(index+"/filtered/GSE133344_filtered_genes.tsv.gz", header=None, sep="\t")
+
+CELL 37 [code]
+genes.columns = ["ensemble_id","gene_symbol"]
+genes.to_csv(index+"/filtered/var.csv")
+
+CELL 38 [code]
+cells = pd.read_csv(index+"/raw/GSE133344_raw_cell_identities.csv.gz")
+cells.to_csv(index+"/raw/obs.csv")
+
+CELL 39 [code]
+genes = pd.read_csv(index+"/raw/GSE133344_raw_genes.tsv.gz", header=None, sep="\t")
+
+CELL 40 [code]
+genes.columns = ["ensemble_id","gene_symbol"]
+genes.to_csv(index+"/raw/var.csv")
+
+CELL 41 [markdown]
+# TianKampmann2019
+
+CELL 42 [code]
+index = "TianKampmann2019"
+
+CELL 43 [code]
+for celltype in ["day7neuron","iPSC"]:
+    for num in [1,2]:
+        sgrna = pd.read_csv(glob.glob(index+"/"+celltype+"/"+celltype+str(num)+"/*sgRNA_mapping.txt.gz")[0],sep="\t")
+        sgrna.to_csv(index+"/"+celltype+"/"+celltype+str(num)+"/obs.csv")
+        genes = pd.read_csv(glob.glob(index+"/"+celltype+"/"+celltype+str(num)+"/*genes.tsv.gz")[0], header=None,
+                   sep="\t")
+        genes.columns = ["ensemble_id","gene_symbol"]
+        genes.to_csv(index+"/"+celltype+"/"+celltype+str(num)+"/var.csv")
+        filename = glob.glob(index+"/"+celltype+"/"+celltype+str(num)+"/*mtx.gz*")[0]
+        !mv {filename} {index+"/"+celltype+"/"+celltype+str(num)+"/counts.mtx.gz"}
+
+CELL 44 [markdown]
+# TianKampmann2021
+
+CELL 45 [code]
+index = "TianKampmann2021"
+
+CELL 46 [code]
+import collections
+import scipy.io as sio
+import scipy.sparse as sp_sparse
+import tables
+
+CELL 47 [code]
+CountMatrix = collections.namedtuple('CountMatrix', ['feature_ref', 'barcodes', 'matrix'])
+ 
+def get_matrix_from_h5(filename):
+    with tables.open_file(filename, 'r') as f:
+        mat_group = f.get_node(f.root, 'matrix')
+        barcodes = f.get_node(mat_group, 'barcodes').read()
+        data = getattr(mat_group, 'data').read()
+        indices = getattr(mat_group, 'indices').read()
+        indptr = getattr(mat_group, 'indptr').read()
+        shape = getattr(mat_group, 'shape').read()
+        matrix = sp_sparse.csc_matrix((data, indices, indptr), shape=shape)
+         
+        feature_ref = {}
+        feature_group = f.get_node(mat_group, 'features')
+        feature_ids = getattr(feature_group, 'id').read()
+        feature_names = getattr(feature_group, 'name').read()
+        feature_ref['id'] = feature_ids
+        feature_ref['name'] = feature_names
+#         tag_keys = getattr(feature_group, '_all_tag_keys').read()
+#         for key in tag_keys:
+#             feature_ref[key] = getattr(feature_group, key).read()
+         
+        return CountMatrix(feature_ref, barcodes, matrix)
+
+CELL 48 [code]
+for experiment in ["CRISPRa","CRISPRi"]:
+    for idx in ["1","2","3","4"]:
+        filename = glob.glob(path+index+"/"+experiment+"/"+experiment+idx+"/GSM*h5")
+        if len(filename) == 1:
+            filtered_feature_bc_matrix = get_matrix_from_h5(filename[0])
+            var = pd.DataFrame(filtered_feature_bc_matrix.feature_ref)
+            var['id'] = var['id'].str.decode("utf-8") 
+            var['name'] = var['name'].str.decode("utf-8")
+            #var.to_csv(index+"/"+crispr+"/"+crispr+str(num)+"/var.csv")
+            obs = pd.DataFrame([x.decode("utf-8") for x in filtered_feature_bc_matrix.barcodes])
+            obs.columns = ['barcode']
+            #obs.to_csv(index+"/"+crispr+"/"+crispr+str(num)+"/obs.csv")
+            adata = sc.AnnData(filtered_feature_bc_matrix.matrix.T, var = var, obs = obs)
+            adata.write(path+index+"/"+experiment+"/"+experiment+idx+"/"+index+"_"+experiment+idx+"_preprocessed.h5")
+
+CELL 49 [markdown]
+# PapalexiSatija2021
+
+CELL 50 [code]
+index = "PapalexiSatija2021"
+
+CELL 51 [code]
+experiment = "eccite_arrayed"
+
+CELL 52 [code]
+cDNA = pd.read_csv(glob.glob(path+"/"+index+"/"+experiment+"/"+"GSM*cDNA*counts*")[0],sep="\t",index_col=0)
+
+CELL 53 [code]
+X = csr_matrix(cDNA.values)
+
+CELL 54 [code]
+genes = pd.DataFrame(cDNA.index)
+genes.columns = ["gene"]
+cells = pd.DataFrame(cDNA.columns)
+cells.columns = ["cell_barcode"]
+
+CELL 55 [code]
+adata = sc.AnnData(X.T, var=genes, obs=cells)
+
+CELL 56 [code]
+adata.write(index+"/"+experiment+"/"+index+"_"+experiment+"_RNA_preprocessed.h5")
+
+CELL 57 [code]
+adt = pd.read_csv(glob.glob(path+"/"+index+"/"+experiment+"/"+"GSM*ADT_counts*")[0],sep="\t",index_col=0)
+
+CELL 58 [code]
+X = csr_matrix(adt.values)
+
+CELL 59 [code]
+proteins = pd.DataFrame(adt.index)
+proteins.columns = ["protein"]
+cells = pd.DataFrame(adt.columns)
+cells.columns = ["cell_barcode"]
+
+CELL 60 [code]
+adata = sc.AnnData(X.T, var=proteins, obs=cells)
+adata.write(index+"/"+experiment+"/"+index+"_"+experiment+"_protein_preprocessed.h5")
+
+CELL 61 [code]
+experiment = "eccite"
+
+CELL 62 [code]
+cDNA = pd.read_csv(glob.glob(path+"/"+index+"/"+experiment+"/"+"GSM*cDNA*counts*")[0],sep="\t",index_col=0)
+
+CELL 63 [code]
+X = csr_matrix(cDNA.values)
+
+CELL 64 [code]
+genes = pd.DataFrame(cDNA.index)
+genes.columns = ["gene"]
+cells = pd.DataFrame(cDNA.columns)
+cells.columns = ["cell_barcode"]
+
+CELL 65 [code]
+adata = sc.AnnData(X.T, var=genes, obs=cells)
+adata.write(index+"/"+experiment+"/"+index+"_"+experiment+"_RNA_preprocessed.h5")
+
+CELL 66 [code]
+adt = pd.read_csv(glob.glob(path+"/"+index+"/"+experiment+"/"+"GSM*ADT_counts*")[0],sep="\t",index_col=0)
+
+CELL 67 [code]
+X = csr_matrix(adt.values)
+
+CELL 68 [code]
+proteins = pd.DataFrame(adt.index)
+proteins.columns = ["protein"]
+cells = pd.DataFrame(adt.columns)
+cells.columns = ["cell_barcode"]
+
+CELL 69 [code]
+adata = sc.AnnData(X.T, var=proteins, obs=cells)
+adata.write(index+"/"+experiment+"/"+index+"_"+experiment+"_protein_preprocessed.h5")
+
+CELL 70 [code]
+
+
+CELL 71 [code]
+
+
+CELL 72 [code]

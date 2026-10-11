@@ -1,0 +1,213 @@
+CELL 0 [code]
+import anndata
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+
+CELL 1 [code]
+# Downloaded from the GSE accession at: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE279945
+# !wget "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE279nnn/GSE279945/suppl/GSE279945%5Fsc%5Fcounts%5Fprocessed.h5ad" -O op3_processed.h5ad
+
+CELL 2 [code]
+op3_dataset = anndata.read_h5ad('op3_processed.h5ad')
+op3_dataset
+
+CELL 3 [markdown]
+#### important note, there can be issues in the original split
+
+CELL 4 [code]
+op3_dataset[op3_dataset.obs['SMILES'] == 'COc1cc2c(c(OC)c1OC)-c1ccc(OC)c(=O)cc1[C@@H](NC(C)=O)CC2'].obs['split'].value_counts()
+
+CELL 5 [code]
+op3_dataset[
+    (op3_dataset.obs['SMILES'] == 'COc1cc2c(c(OC)c1OC)-c1ccc(OC)c(=O)cc1[C@@H](NC(C)=O)CC2') & 
+    (op3_dataset.obs['split'] == 'public_test')
+].obs['cell_type'].value_counts()
+
+CELL 6 [code]
+
+
+CELL 7 [markdown]
+##### C[S+](C)[O-] is negative control (basically no perturabtion at all, so it is the control in our benchmark)
+the other two (belinostat, dabrafenib) are positive controls — known to induce large transcriptomic response
+"The dose of belinostat is 0.1µM, DMSO 14.1µM, and the rest of the compounds 1µM" (from the op3 paper)
+
+CELL 8 [code]
+op3_dataset[op3_dataset.obs['control']].obs['SMILES'].unique()
+
+CELL 9 [code]
+smile_to_ct = {}
+for smile in op3_dataset.obs['SMILES'].unique():
+    data_subset = op3_dataset[(op3_dataset.obs['SMILES'] == smile)&(op3_dataset.obs['split'] == 'train')]
+    smile_to_ct[smile] = data_subset.obs['cell_type'].unique()
+
+CELL 10 [code]
+np.array([len(v) for k, v in smile_to_ct.items()])
+
+CELL 11 [code]
+list(smile_to_ct)[:3]
+
+CELL 12 [code]
+len(smile_to_ct)
+
+CELL 13 [markdown]
+##### 15 compounds of transfer cell types (B and Myeloids cells) are in the train split
+
+CELL 14 [code]
+(np.array([len(v) for k, v in smile_to_ct.items()]) == 4).sum()
+
+CELL 15 [code]
+len(op3_dataset[op3_dataset.obs['split'] == 'public_test'].obs['SMILES'].unique())
+
+CELL 16 [code]
+len(op3_dataset[op3_dataset.obs['split'] == 'private_test'].obs['SMILES'].unique())
+
+CELL 17 [code]
+# no overlap of compounds between public test and private test
+set(op3_dataset[op3_dataset.obs['split'] == 'public_test'].obs['SMILES'].unique()).intersection(
+    set(op3_dataset[op3_dataset.obs['split'] == 'private_test'].obs['SMILES'].unique())
+)
+
+CELL 18 [code]
+# two overlapping compounds between train and public test
+set(op3_dataset[op3_dataset.obs['split'] == 'public_test'].obs['SMILES'].unique()).intersection(
+    [k for k, v in smile_to_ct.items() if len(v) == 4]
+)
+
+CELL 19 [code]
+# no overlapping between train and private test
+set(op3_dataset[op3_dataset.obs['split'] == 'private_test'].obs['SMILES'].unique()).intersection(
+    [k for k, v in smile_to_ct.items() if len(v) == 4]
+)
+
+CELL 20 [code]
+# so, for the held-out cell types that are B abd Meyloids, there are 15 compounds in train, 50 in val, 78 in test
+# minus the 2 overlap, and plus 3 in the controls, we get the right number which is 144 for all unique compounds in the dataset
+15 + 50 + 78 - 2 + 3
+
+CELL 21 [markdown]
+#### note that public test and private test also have cell types in T and NK
+
+CELL 22 [code]
+op3_dataset[op3_dataset.obs['split'] == 'train'].obs['cell_type'].value_counts()
+
+CELL 23 [code]
+op3_dataset[op3_dataset.obs['split'] == 'public_test'].obs['cell_type'].value_counts()
+
+CELL 24 [code]
+op3_dataset[op3_dataset.obs['split'] == 'private_test'].obs['cell_type'].value_counts()
+
+CELL 25 [code]
+op3_dataset.obs['cell_type'].unique()
+
+CELL 26 [markdown]
+##### create splits
+
+CELL 27 [code]
+op3_split = pd.Series('none', index=op3_dataset.obs_names)
+
+# first, use existing split of the op3 dataset
+op3_split[op3_dataset.obs['split'] == 'train'] = 'train'
+op3_split[op3_dataset.obs['split'] == 'public_test'] = 'val'
+op3_split[op3_dataset.obs['split'] == 'private_test'] = 'test'
+
+# second, on positive control cells, all assigned to train (I assume positive controls are not meaningful for evaluation)
+op3_split[(op3_dataset.obs['split'] == 'control') & (op3_dataset.obs['SMILES'] != 'C[S+](C)[O-]')] = 'train'
+
+# next, on negative control cells, split 50/25/25 to train, val and test
+for cell_type in op3_dataset.obs['cell_type'].unique():
+    
+    control_cells = op3_dataset[(op3_dataset.obs['SMILES'] == 'C[S+](C)[O-]') & (op3_dataset.obs['cell_type'] == cell_type)].obs_names
+    
+    # using code from frangieh split
+    train_control_cells, heldout_control_cells = train_test_split(
+        control_cells, 
+        test_size=0.5, 
+        random_state=11
+    )
+    val_control_cells, test_control_cells = train_test_split(
+        heldout_control_cells, 
+        test_size=0.5, 
+        random_state=21
+    )
+    op3_split.loc[train_control_cells] = 'train'
+    op3_split.loc[val_control_cells] = 'val'
+    op3_split.loc[test_control_cells] = 'test'
+
+op3_split.value_counts()
+
+CELL 28 [code]
+op3_split[(op3_dataset.obs['SMILES'] == 'C[S+](C)[O-]') & (op3_dataset.obs['cell_type'] == 'T cells')].value_counts()
+
+CELL 29 [code]
+op3_split[(op3_dataset.obs['SMILES'] == 'C[S+](C)[O-]') & (op3_dataset.obs['cell_type'] == 'NK cells')].value_counts()
+
+CELL 30 [code]
+op3_split[(op3_dataset.obs['SMILES'] == 'C[S+](C)[O-]') & (op3_dataset.obs['cell_type'] == 'B cells')].value_counts()
+
+CELL 31 [code]
+op3_split[(op3_dataset.obs['SMILES'] == 'C[S+](C)[O-]') & (op3_dataset.obs['cell_type'] == 'Myeloid cells')].value_counts()
+
+CELL 32 [markdown]
+#### there are some bad apples! throwing aways chemical+cell_type in val/test sets that have too few cells
+
+CELL 33 [code]
+counts=[]
+
+for smile in op3_dataset[op3_split == 'val'].obs['SMILES'].unique():
+    
+    val_subset = op3_dataset[(op3_split == 'val') & (op3_dataset.obs['SMILES'] == smile)]
+    ct_counts = val_subset.obs['cell_type'].value_counts()
+
+    if any(ct_counts < 100):  # too few cells in this drug+cell_type group
+        print(smile)
+        print(ct_counts)
+        print('='*20)
+        bad_cell_types = ct_counts[ct_counts < 100].index.values
+        for cell_type in bad_cell_types:
+            idx = np.where((op3_dataset.obs['SMILES'] == smile) & 
+                           (op3_dataset.obs['cell_type'] == cell_type) & 
+                           (op3_split == 'val'))
+            op3_split.iloc[idx] = 'none'
+            counts.append(len(idx[0]))
+
+        
+for smile in op3_dataset[op3_split == 'test'].obs['SMILES'].unique():
+    
+    test_subset = op3_dataset[(op3_split == 'test') & (op3_dataset.obs['SMILES'] == smile)]
+    ct_counts = test_subset.obs['cell_type'].value_counts()
+
+    if any(ct_counts < 100):  # too few cells in this drug+cell_type group
+        print(smile)
+        print(ct_counts)
+        print('='*20)
+        bad_cell_types = ct_counts[ct_counts < 100].index.values
+        for cell_type in bad_cell_types:
+            idx = np.where((op3_dataset.obs['SMILES'] == smile) & 
+                           (op3_dataset.obs['cell_type'] == cell_type) & 
+                           (op3_split == 'test'))
+            op3_split.iloc[idx] = 'none'
+            counts.append(len(idx[0]))
+    
+
+CELL 34 [code]
+max(counts)
+
+CELL 35 [code]
+op3_split.value_counts()
+
+CELL 36 [code]
+f'{sum(counts)} cells discarded from validation and test splits'
+
+CELL 37 [code]
+
+
+CELL 38 [markdown]
+#### saving datafile and split
+
+CELL 39 [code]
+op3_split.to_csv('op3_split.csv', header=False)
+
+CELL 40 [code]
+# check: fixed dose depending on the compounds, so not modelled
+op3_dataset.obs[['dose_uM', 'SMILES']].drop_duplicates()

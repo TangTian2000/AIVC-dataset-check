@@ -1,0 +1,9 @@
+dataset_label,original_source_status,counted_as_independent_family,next_step
+Replogle_exp6,not_resolved,False,Read benchmark data-cards/preprocessing and resolve original accession before inclusion; do not infer batch or family from this label
+Replogle_exp7,not_resolved,False,Read benchmark data-cards/preprocessing and resolve original accession before inclusion; do not infer batch or family from this label
+Replogle_exp8,not_resolved,False,Read benchmark data-cards/preprocessing and resolve original accession before inclusion; do not infer batch or family from this label
+Schmidt,not_resolved,False,Read benchmark data-cards/preprocessing and resolve original accession before inclusion; do not infer batch or family from this label
+Wessels,not_resolved,False,Read benchmark data-cards/preprocessing and resolve original accession before inclusion; do not infer batch or family from this label
+Afriat,not_resolved,False,Read benchmark data-cards/preprocessing and resolve original accession before inclusion; do not infer batch or family from this label
+Parekh,not_resolved,False,Read benchmark data-cards/preprocessing and resolve original accession before inclusion; do not infer batch or family from this label
+TCDD,not_resolved,False,Read benchmark data-cards/preprocessing and resolve original accession before inclusion; do not infer batch or family from this label

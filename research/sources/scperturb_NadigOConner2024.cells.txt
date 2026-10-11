@@ -1,0 +1,99 @@
+CELL 0 [code]
+import numpy as np
+import scanpy as sc
+import pandas as pd
+
+CELL 1 [code]
+jurkat = sc.read_h5ad('/Users/tessagreen/Documents/datasets/NadigOConner2024/GSE264667_jurkat_raw_singlecell_01.h5ad')
+
+CELL 2 [code]
+#k562 = sc.read_h5ad('/Users/tessagreen/Documents/datasets/ReplogleWeissman2022_K562_essential.h5ad')
+#datlinger = sc.read_h5ad("/Users/tessagreen/Documents/datasets/DatlingerBock2017.h5ad")
+
+CELL 3 [code]
+jurkat.obs['disease'] = "acute T cell leukemia"
+jurkat.obs['cancer'] = True
+jurkat.obs['cell_line'] = "Jurkat"
+jurkat.obs['organism'] = "human"
+jurkat.obs["perturbation_type"] = "CRISPR"
+jurkat.obs['tissue_type']="cell_line"
+# relabel column "gene" in obs as perturbation
+jurkat.obs['perturbation'] = jurkat.obs['gene']
+# drop column gene from obs
+
+
+CELL 4 [code]
+jurkat.obs.rename(columns={"mitopercent": "percent_mito", "sgID_AB":"guide_id", "gem_group":"batch"},inplace=True)
+jurkat.obs['ncounts']= jurkat.X.sum(1)
+jurkat.obs['ngenes'] = np.count_nonzero(jurkat.X, axis =1)
+jurkat.obs["nperts"] = 1
+jurkat.obs.loc[jurkat.obs['gene'] == "non-targeting","nperts"] = 0 
+# change the category "non-targeting" to "control" in the "perturbation" column of obs
+jurkat.obs['perturbation'] = jurkat.obs['perturbation'].replace("non-targeting","control")
+
+
+# percent_ribo
+ribomat = jurkat[:,jurkat.var["gene_name"].str.startswith(("RPS","RPL"))]
+ribomat = ribomat.X.sum(1)
+jurkat.obs['percent_ribo'] = np.divide(ribomat, jurkat.obs['ncounts'])
+
+CELL 5 [code]
+jurkat.var[jurkat.var['gene_name'].duplicated()]
+
+CELL 6 [code]
+jurkat.var['gene_name'] = jurkat.var['gene_name'].astype("object")
+jurkat.var.loc[jurkat.var['gene_name'] == "HSPA14",'gene_name']  = 'HSPA14_'+jurkat.var.loc[jurkat.var['gene_name'] == "HSPA14",:].index.values
+
+jurkat.var['ensembl_id'] = jurkat.var.index
+jurkat.var.set_index('gene_name', inplace=True)
+
+CELL 7 [code]
+jurkat.var['ncounts'] = jurkat.X.sum(0)
+jurkat.var['ncells'] = np.count_nonzero(jurkat.X, axis =0)
+
+CELL 8 [code]
+jurkat.write_h5ad("NadigOConner2024_jurkat.h5ad", compression="gzip")
+
+CELL 9 [code]
+hepg2 = sc.read_h5ad('/Users/tessagreen/Documents/datasets/NadigOConner2024/GSE264667_hepg2_raw_singlecell_01.h5ad')
+
+CELL 10 [code]
+hepg2.obs['disease'] = "hepatoblastoma"
+hepg2.obs['cancer'] = True
+hepg2.obs['cell_line'] = "Hep-G2"
+hepg2.obs['organism'] = "human"
+hepg2.obs["perturbation_type"] = "CRISPR"
+hepg2.obs['tissue_type']="cell_line"
+# create perturbation column
+hepg2.obs['perturbation'] = hepg2.obs['gene']
+
+
+CELL 11 [code]
+hepg2.obs.rename(columns={"mitopercent": "percent_mito", "sgID_AB":"guide_id", "gem_group":"batch"},inplace=True)
+hepg2.obs['ncounts']= hepg2.X.sum(1)
+hepg2.obs['ngenes'] = np.count_nonzero(hepg2.X, axis =1)
+hepg2.obs["nperts"] = 1
+hepg2.obs.loc[hepg2.obs['gene'] == "non-targeting","nperts"] = 0 
+hepg2.obs['perturbation'] = hepg2.obs['perturbation'].replace("non-targeting","control")
+
+# percent_ribo
+ribomat = hepg2[:,hepg2.var["gene_name"].str.startswith(("RPS","RPL"))]
+ribomat = ribomat.X.sum(1)
+hepg2.obs['percent_ribo'] = np.divide(ribomat, hepg2.obs['ncounts'])
+
+CELL 12 [code]
+hepg2.var[hepg2.var['gene_name'].duplicated()]
+
+CELL 13 [code]
+hepg2.var['gene_name'] = hepg2.var['gene_name'].astype("object")
+hepg2.var.loc[hepg2.var['gene_name'] == "HSPA14",'gene_name']  = 'HSPA14_'+hepg2.var.loc[hepg2.var['gene_name'] == "HSPA14",:].index.values
+
+hepg2.var['ensembl_id'] = hepg2.var.index
+hepg2.var.set_index('gene_name', inplace=True)
+
+CELL 14 [code]
+hepg2.var['ncounts'] = hepg2.X.sum(0)
+hepg2.var['ncells'] = np.count_nonzero(hepg2.X, axis =0)
+
+CELL 15 [code]
+hepg2.write_h5ad("NadigOConner2024_hepg2.h5ad", compression="gzip")

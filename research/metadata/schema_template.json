@@ -1,0 +1,12 @@
+{
+  "separator": ",",
+  "cell_id_columns": ["cell_id", "library_id"],
+  "batch": "independent_batch_id",
+  "perturbation": "perturbation",
+  "strata": ["cell_line", "donor_id", "dose", "time_point", "stimulus_background"],
+  "controls": ["non-targeting"],
+  "control_match_columns": ["cell_line", "donor_id", "time_point", "stimulus_background"],
+  "batch_semantics_evidence": "",
+  "independent_batch_confirmed": false,
+  "note": "TEMPLATE ONLY: replace with reviewed source columns and exact control values. Do not invent missing columns or assert independence from names/barcode suffixes."
+}

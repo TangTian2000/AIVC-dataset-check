@@ -1,0 +1,13 @@
+{
+  "rows": 192,
+  "drug_labels": [
+    "BMS",
+    "Dex",
+    "Nutlin",
+    "SAHA"
+  ],
+  "column3_unique": [
+    1
+  ],
+  "note": "Headerless source. Column3 semantics unverified; sample counts, not cells."
+}

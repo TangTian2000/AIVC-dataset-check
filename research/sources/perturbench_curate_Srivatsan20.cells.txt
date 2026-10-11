@@ -1,0 +1,176 @@
+CELL 0 [markdown]
+# 2023-07-26-Curation: Srivatsan20 Chemical Perturbation Screen
+
+CELL 1 [code]
+import scanpy as sc
+import numpy as np
+import subprocess as sp
+import os
+from perturbench.analysis.utils import get_ensembl_mappings
+from perturbench.analysis.preprocess import preprocess
+
+%reload_ext autoreload
+%autoreload 2
+
+CELL 2 [markdown]
+Download from: https://zenodo.org/records/7041849/files/SrivatsanTrapnell2020_sciplex3.h5ad?download=1
+
+CELL 3 [code]
+data_url = 'https://zenodo.org/records/7041849/files/SrivatsanTrapnell2020_sciplex3.h5ad?download=1'
+data_cache_dir = '../perturbench_data' ## Change this to your local data directory
+
+if not os.path.exists(data_cache_dir):
+    os.makedirs(data_cache_dir)
+
+tmp_data_dir = f'{data_cache_dir}/srivatsan20_downloaded.h5ad'
+
+if not os.path.exists(tmp_data_dir):
+    sp.call(f'wget {data_url} -O {tmp_data_dir}', shell=True)
+
+CELL 4 [code]
+adata = sc.read_h5ad(tmp_data_dir)
+adata
+
+CELL 5 [code]
+adata.obs.cell_line.value_counts()
+
+CELL 6 [code]
+adata.var.head()
+
+CELL 7 [code]
+unique_genes = ~adata.var.ensembl_id.duplicated()
+np.sum(unique_genes)
+
+CELL 8 [code]
+adata = adata[:,unique_genes]
+adata.var_names = adata.var.ensembl_id.astype(str)
+
+CELL 9 [code]
+human_ids = [x for x in adata.var_names if 'ENSG' in x]
+len(human_ids)
+
+CELL 10 [code]
+adata = adata[:,human_ids]
+adata.shape
+
+CELL 11 [code]
+gene_mappings = get_ensembl_mappings()
+
+CELL 12 [code]
+len(gene_mappings.keys())
+
+CELL 13 [code]
+gene_mappings = {k:v for k,v in gene_mappings.items() if isinstance(v, str) and v != ''}
+len(gene_mappings.keys())
+
+CELL 14 [code]
+np.sum([x in gene_mappings for x in adata.var_names])
+
+CELL 15 [code]
+adata = adata[:,[x in gene_mappings for x in adata.var_names]]
+adata
+
+CELL 16 [code]
+adata.var['gene_symbol'] = [gene_mappings[x] for x in adata.var_names]
+adata.var_names = adata.var['gene_symbol']
+
+CELL 17 [code]
+adata.var_names[0:5]
+
+CELL 18 [code]
+adata.obs.perturbation.value_counts()
+
+CELL 19 [code]
+adata.obs.rename(columns = {
+    'n_genes': 'ngenes',
+    'n_counts': 'ncounts',
+}, inplace=True)
+
+adata.obs['perturbation_type'] = 'drug'
+adata.obs['dataset'] = 'srivatsan20'
+adata.obs['cell_type'] = adata.obs['cell_line'].copy()
+adata.obs['treatment'] = 'none'
+adata.obs['condition'] = adata.obs['perturbation'].copy()
+
+adata
+
+CELL 20 [code]
+adata.obs.cell_type.value_counts()
+
+CELL 21 [code]
+adata = adata[adata.obs.cell_type.isin(['MCF7', 'A549', 'K562'])]
+adata.obs.cell_type = [x.lower() for x in adata.obs.cell_type]
+adata.obs.cell_type.unique()
+
+CELL 22 [markdown]
+Ensure doses are in micromolars
+
+CELL 23 [code]
+adata.obs['dose'] = adata.obs['dose_value'].copy() * 1/1000
+adata.obs.dose.value_counts()
+
+CELL 24 [code]
+adata.obs['dose_unit'] = 'uM'
+
+CELL 25 [markdown]
+Ensure no perturbation name has a "+" in it since we use "+" as the perturbation delimiter
+
+CELL 26 [code]
+for p in adata.obs.condition.unique():
+    if "+" in p:
+        print(p)
+
+CELL 27 [code]
+perturbation_remap = {
+    '(+)-JQ1': 'JQ1',
+    'ENMD-2076 L-(+)-Tartaric acid': 'ENMD-2076',
+}
+
+adata.obs['perturbation'] = [perturbation_remap.get(x, x) for x in adata.obs.perturbation.astype(str)]
+adata.obs['condition'] = adata.obs['perturbation'].copy()
+
+CELL 28 [markdown]
+Subset to highest dose
+
+CELL 29 [code]
+adata.obs['dose'].value_counts()
+
+CELL 30 [code]
+adata.shape
+
+CELL 31 [code]
+np.sum((adata.obs.dose == 10.0) | (adata.obs.condition == 'control'))
+
+CELL 32 [code]
+adata = adata[(adata.obs.dose == 10.0) | (adata.obs.condition == 'control')].copy()
+adata.shape
+
+CELL 33 [code]
+import gc
+gc.collect()
+
+CELL 34 [markdown]
+Run preprocessing
+
+CELL 35 [code]
+adata = preprocess(
+    adata,
+    perturbation_key='condition',
+    covariate_keys=['cell_type'],
+)
+
+CELL 36 [code]
+adata = adata.copy()
+adata
+
+gc.collect()
+
+CELL 37 [code]
+adata.var.head()
+
+CELL 38 [code]
+adata.var.index.name = None
+
+CELL 39 [code]
+output_data_path = f'{data_cache_dir}/srivatsan20_processed.h5ad'
+adata.write_h5ad(output_data_path)
